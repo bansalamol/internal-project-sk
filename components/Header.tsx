@@ -14,20 +14,25 @@ const links: {
   label: string;
 }[] = [
   {
-    href: "/#pricing",
-    label: "Pricing",
+    href: "/about",
+    label: "About",
   },
-  {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
-  {
-    href: "/#faq",
-    label: "FAQ",
-  },
-];
+    {
+      href: "/blog",
+      label: "Blog",
+    },
+  ];
 
-const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
+const cta: JSX.Element = (
+  <div className="flex space-x-4">
+    <Link href="/signin">
+      <button className="btn btn-primary">Login</button>
+    </Link>
+    <Link href="/signup">
+      <button className="btn btn-secondary">Register</button>
+    </Link>
+  </div>
+);
 
 // A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
 // The header is responsive, and on mobile, the links are hidden behind a burger button.
