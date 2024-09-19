@@ -23,19 +23,17 @@ const links: {
     },
   ];
 
-const cta: JSX.Element = (
-  <div className="flex space-x-4">
-    <Link href="/signin">
-      <button className="btn btn-primary">Login</button>
-    </Link>
-    <Link href="/signup">
-      <button className="btn btn-secondary">Register</button>
-    </Link>
-  </div>
-);
+  const cta: JSX.Element = (
+    <div className="flex space-x-4">
+      <Link href="/signin">
+        <button className="btn bg-slate-900 text-white hover:bg-slate-700">
+          Join {config.appName}
+        </button>
+      </Link>
+    </div>
+  );
+  
 
-// A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
-// The header is responsive, and on mobile, the links are hidden behind a burger button.
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -46,9 +44,9 @@ const Header = () => {
   }, [searchParams]);
 
   return (
-    <header className="bg-base-200">
+    <header className="py-2">
       <nav
-        className="container flex items-center justify-between px-8 py-4 mx-auto"
+        className="container flex items-center justify-between px-8 py-2 mx-auto"
         aria-label="Global"
       >
         {/* Your logo/name on large screens */}

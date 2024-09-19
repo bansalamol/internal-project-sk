@@ -2,11 +2,10 @@ import themes from "daisyui/src/theming/themes";
 import { ConfigProps } from "./types/config";
 
 const config = {
-  // REQUIRED
-  appName: "App1",
-  // REQUIRED: a short description of your app for SEO tags (can be overwritten)
-  appDescription:
-    "The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+  appName: "IPO Club",
+  appDescription: "IPO Club - Your Gateway to Going Public",
+  seoName: "IPO Club: The Ultimate Platform for IPOs",
+  seoDescription: "Discover the latest IPO news, analysis, and insights. Join the IPO Club community and stay ahead of the curve in the world of public offerings.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "shipfa.st",
   crisp: {

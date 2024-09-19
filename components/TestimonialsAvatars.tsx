@@ -67,7 +67,7 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
 
         <div className="text-base text-base-content/80">
           <span className="font-semibold text-base-content">32</span> makers
-          ship faster
+          IPO Club faster
         </div>
       </div>
     </div>
