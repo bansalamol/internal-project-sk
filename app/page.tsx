@@ -1,9 +1,13 @@
 import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Image from "next/image";
-import config from "@/config";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import TestimonialsAvatars from "@/components/TestimonialsAvatars";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -12,7 +16,7 @@ export default function Home() {
         <Header />
       </Suspense>
       <main className="container-fluid mx-auto">
-        {/* Hero Section */}
+        {/* Banner Section */}
         <section className="relative bg-gradient-to-b from-green-50 to-blue-100">
           <div className="mx-auto max-w-[85rem] px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4">
             <div className="mx-auto max-w-3xl text-center">
@@ -35,9 +39,9 @@ export default function Home() {
               </div>
               <div className="mb-2 mt-6 flex items-center space-x-2 rounded-2xl border-gray-300 px-4 py-2">
                 <div className="space-y-8 mx-auto w-full max-w-md">
-                    <a href="/signin" className="btn btn-block bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto">
-                      <span className="ml-2">Unlock Free Articles</span>
-                    </a>
+                  <a href="/signin" className="btn btn-block bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto">
+                    <span className="ml-2">Unlock Free Articles</span>
+                  </a>
                 </div>
               </div>
               <div className="mt-10">
@@ -125,61 +129,212 @@ export default function Home() {
           </div>
         </section>
 
-
-
         {/* Section 2: Our Services */}
-        {/* <section className="my-16 bg-green-50/60 py-12 rounded-lg shadow-inner">
-          <h2 className="text-3xl font-bold text-center mb-8">A Full Suite of Services for Every Step of Your IPO</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-            We specialize in a comprehensive range of services designed to support your IPO at every stage.
-          </p>
-          <ul className="list-disc max-w-3xl mx-auto text-left space-y-4 text-lg mt-8">
-            <li>IPO Readiness Assessment: Assess your company’s IPO potential and identify key areas of improvement.</li>
-            <li>Financial and Legal Advisory: Collaborate with top-tier advisors to streamline all financial and legal processes.</li>
-            <li>Investor Engagement: Tap into our extensive network of investors to generate demand and ensure a successful offering.</li>
-            <li>Merchant Banker Relations: Access trusted Merchant Bankers to help structure and execute the offering.</li>
-            <li>Due Diligence & Documentation: Ensure compliance with regulatory frameworks and manage all documentation.</li>
-          </ul>
-          <div className="text-center mt-8">
-            <a href="/services" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-600 transition duration-300">
-              Learn More About Our Services
-            </a>
+        <section className="bg-green-50/60" id="services">
+          <div className="mx-auto max-w-5xl px-8 py-16">
+            <div className="mb-20 flex w-full flex-col text-center">
+              <p className="mb-8 font-medium">A Full Suite of Services for Every Step of Your IPO</p>
+              <h2 className="text-3xl font-bold tracking-tight lg:text-4xl">
+                We specialize in a comprehensive range of services designed to support your IPO at every stage.
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-12 text-center sm:grid-cols-2 md:grid-cols-3 lg:gap-y-16">
+
+              {/* IPO Readiness Assessment */}
+              <div>
+                <div className="relative mx-auto flex items-center justify-center">
+                  <svg className="text-blue-100" width="72" height="75" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M63.6911 28.8569C68.0911 48.8121 74.6037 61.2674 53.2349 65.9792C31.8661 70.6909 11.6224 61.2632 7.22232 41.308C2.82229 21.3528 3.6607 12.3967 25.0295 7.68503C46.3982 2.97331 59.2911 8.90171 63.6911 28.8569Z"></path>
+                  </svg>
+                  <svg className="absolute size-9 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-semibold text-black">IPO Readiness Assessment</h3>
+                <p className="mt-4 text-base text-gray-600">Assess your company’s IPO potential and identify key areas of improvement.</p>
+              </div>
+
+              {/* Financial and Legal Advisory */}
+              <div>
+                <div className="relative mx-auto flex items-center justify-center">
+                  <svg className="text-green-100" width="62" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M62 13.001C62 33.4355 53.9345 64.001 33.5 64.001C13.0655 64.001 0 50.435 0 30.0005C0 9.56596 2.56546 4.00021 23 4.00021C43.4345 4.00021 62 -7.43358 62 13.001Z"></path>
+                  </svg>
+                  <svg className="absolute size-9 text-green-600" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M14.5 19.5H9.5m5 0C14.5 18.786 14.5 18.43 14.538 18.193c.123-.764.144-.812.631-1.413.15-.186.71-.688 1.83-1.692 1.534-1.373 2.5-3.368 2.5-5.588 0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5c0 2.221.965 4.216 2.5 5.588 1.12 1.004 1.68 1.506 1.83 1.692.487.601.509.649.631 1.413M14.5 19.5c0 .934 0 1.402-.201 1.75-.132.228-.321.417-.549.549-.349.201-.816.201-1.751.201s-1.402 0-1.75-.201a1.124 1.124 0 01-.549-.549C9.5 20.901 9.5 20.434 9.5 19.5" />
+                    <path d="M12.786 8.5L10.643 11.5h3l-2.143 3" />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-semibold text-black">Financial and Legal Advisory</h3>
+                <p className="mt-4 text-base text-gray-600">Collaborate with top-tier advisors to streamline all financial and legal processes.</p>
+              </div>
+
+              {/* Investor Engagement */}
+              <div>
+                <div className="relative mx-auto flex items-center justify-center">
+                  <svg className="text-orange-100" width="72" height="75" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M63.6911 28.8569C68.0911 48.8121 74.6037 61.2674 53.2349 65.9792C31.8661 70.6909 11.6224 61.2632 7.22232 41.308C2.82229 21.3528 3.6607 12.3967 25.0295 7.68503C46.3982 2.97331 59.2911 8.90171 63.6911 28.8569Z"></path>
+                  </svg>
+                  <svg className="absolute size-9 text-orange-600" viewBox="0 0 512 512" fill="currentColor">
+                    <path d="M256 0.5C115.1 0.5 0.5 115.1 0.5 255.992S115.1 511.5 256 511.5c140.9 0 255.5-114.6 255.5-255.508S396.9 0.5 256 0.5z" />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-semibold text-black">Investor Engagement</h3>
+                <p className="mt-4 text-base text-gray-600">Tap into our extensive network of investors to generate demand and ensure a successful offering.</p>
+              </div>
+
+              {/* Regulatory Compliance */}
+              <div>
+                <div className="relative mx-auto flex items-center justify-center">
+                  <svg className="text-yellow-100" width="66" height="68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M65.5 30C65.5 50.4345 46.4345 66 26 66C5.56554 66 0.5 50.4345 0.5 30C0.5 9.56555 46.4345 -6.5 65.5 30Z" />
+                  </svg>
+                  <svg className="absolute size-9 text-yellow-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-semibold text-black">Regulatory Compliance</h3>
+                <p className="mt-4 text-base text-gray-600">Ensure that your IPO process complies with all regulatory requirements.</p>
+              </div>
+
+              {/* Post-IPO Support */}
+              <div>
+                <div className="relative mx-auto flex items-center justify-center">
+                  <svg className="text-purple-100" width="62" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M62 13.001C62 33.4355 53.9345 64.001 33.5 64.001C13.0655 64.001 0 50.435 0 30.0005C0 9.56596 2.56546 4.00021 23 4.00021C43.4345 4.00021 62 -7.43358 62 13.001Z"></path>
+                  </svg>
+                  <svg className="absolute size-9 text-purple-600" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M14.5 19.5H9.5m5 0C14.5 18.786 14.5 18.43 14.538 18.193c.123-.764.144-.812.631-1.413.15-.186.71-.688 1.83-1.692 1.534-1.373 2.5-3.368 2.5-5.588 0-4.142-3.358-7.5-7.5-7.5s-7.5 3.358-7.5 7.5c0 2.221.965 4.216 2.5 5.588 1.12 1.004 1.68 1.506 1.83 1.692.487.601.509.649.631 1.413M14.5 19.5c0 .934 0 1.402-.201 1.75-.132.228-.321.417-.549.549-.349.201-.816.201-1.751.201s-1.402 0-1.75-.201a1.124 1.124 0 01-.549-.549C9.5 20.901 9.5 20.434 9.5 19.5" />
+                    <path d="M12.786 8.5L10.643 11.5h3l-2.143 3" />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-semibold text-black">Post-IPO Support</h3>
+                <p className="mt-4 text-base text-gray-600">Receive post-IPO support to maintain your company’s success on the public market.</p>
+              </div>
+
+              {/* New Service */}
+              <div>
+                <div className="relative mx-auto flex items-center justify-center">
+                  <svg className="text-pink-100" width="64" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 0C49.6731 0 64 14.3269 64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32C0 14.3269 14.3269 0 32 0Z" />
+                  </svg>
+                  <svg className="absolute size-9 text-pink-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M12 8v4l3 3M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z" />
+                  </svg>
+                </div>
+                <h3 className="mt-8 text-lg font-semibold text-black">New Service</h3>
+                <p className="mt-4 text-base text-gray-600">Explore our newly added service to further support your IPO journey.</p>
+              </div>
+            </div>
+            <div className="flex justify-center mt-12">
+              <a href="/services" className="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-slate-600 transition duration-300">
+                Learn More Services
+              </a>
+            </div>
           </div>
-        </section> */}
+        </section>
 
-        {/* Section 3: Success Stories */}
+        {/* Section 3: FAQs */}
+        <FAQ />
 
-        {/* <section className="my-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Companies We've Helped Go Public</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-            Explore some of our success stories where we helped businesses successfully launch their IPOs.
-          </p>
-          <ul className="list-disc max-w-3xl mx-auto text-left space-y-4 text-lg mt-8">
-            <li>Case Study 1: Manufacturing Company</li>
-            <li>Case Study 2: Technology Start-Up</li>
-            <li>Case Study 3: SME in Consumer Goods</li>
-          </ul>
-          <div className="text-center mt-8">
-            <a href="/case-studies" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-600 transition duration-300">
-              Read Our Case Studies
-            </a>
+        {/* Section 4: Success Stories */}
+        <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
+              Companies We've Helped Go Public
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto text-center mb-10">
+              Explore some of our success stories where we helped businesses successfully launch their IPOs.
+            </p>
+
+            {/* Case Studies */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Case Study 1 */}
+              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500 mx-auto mb-4">
+                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-9H8l3.293-3.293a1 1 0 00-1.414-1.414L6 12.586 10.586 17a1 1 0 001.414-1.414L9 13h2v5a1 1 0 102 0v-5h2a1 1 0 100-2h-3V8a1 1 0 10-2 0v5z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 text-center">Manufacturing Company</h3>
+                <p className="text-gray-600 text-center mt-2">We guided a major manufacturing firm to successfully launch their IPO.</p>
+              </div>
+
+              {/* Case Study 2 */}
+              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 mx-auto mb-4">
+                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 00-7.071 17.071l-2.12 2.121a1 1 0 001.414 1.415l2.121-2.122A10 10 0 1012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-3-8h2V7a1 1 0 112 0v5h2a1 1 0 010 2h-6a1 1 0 010-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 text-center">Technology Start-Up</h3>
+                <p className="text-gray-600 text-center mt-2">We assisted a tech start-up in their rapid IPO process with full support.</p>
+              </div>
+
+              {/* Case Study 3 */}
+              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-500 mx-auto mb-4">
+                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 7h-2v6h6v-2h-4V7zm-1-5C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 text-center">Consumer Goods SME</h3>
+                <p className="text-gray-600 text-center mt-2">Our team helped an SME in consumer goods secure a successful public launch.</p>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-12">
+              <a href="/case-studies" className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-slate-700 transition duration-300">
+                Read Our Case Studies
+              </a>
+            </div>
           </div>
-        </section> */}
+        </section>
 
-        {/* Section 4: Our Expert Team */}
-        <section className="my-16 bg-gray-100 py-12 rounded-lg shadow-inner">
-          <h2 className="text-3xl font-bold text-center mb-8">Meet the Experts Behind Your IPO Success</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
-            Our team of seasoned professionals includes investment bankers, legal experts, financial strategists, and communications specialists—all with deep expertise in IPOs and capital markets.
+        {/* Section 5: Our Expert Team */}
+        <section className="my-16 py-12 bg-gradient-to-r from-blue-100 to-indigo-100">
+          <h2 className="text-3xl font-bold text-center mb-8 text-indigo-900">
+            Meet the Experts Behind Your IPO Success
+          </h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center leading-relaxed">
+            Our team of seasoned professionals includes investment bankers, legal experts, financial strategists,
+            and communications specialists—all with deep expertise in IPOs and capital markets.
           </p>
-          <div className="text-center mt-8">
-            <a href="/team" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-600 transition duration-300">
+
+          <div className="flex justify-center gap-8 flex-wrap mt-10">
+            {/* Placeholder for team member cards */}
+            <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
+              <img src="team-member1.jpg" alt="Team Member 1" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <h3 className="text-xl font-semibold text-center text-indigo-700">Jane Doe</h3>
+              <p className="text-gray-600 text-center">Lead Investment Banker</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
+              <img src="team-member2.jpg" alt="Team Member 2" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <h3 className="text-xl font-semibold text-center text-indigo-700">John Smith</h3>
+              <p className="text-gray-600 text-center">Financial Strategist</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
+              <img src="team-member3.jpg" alt="Team Member 3" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <h3 className="text-xl font-semibold text-center text-indigo-700">Sarah Johnson</h3>
+              <p className="text-gray-600 text-center">Legal Expert</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href="/team"
+              className="bg-indigo-700 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-indigo-600 transition duration-300"
+            >
               Meet the Team
             </a>
           </div>
         </section>
 
-        {/* Section 5: Join the IPO Club Today */}
+
+        {/* Section 6: Join the IPO Club Today */}
         <section className="my-16">
           <h2 className="text-3xl font-bold text-center mb-8">Ready to Take Your Company Public?</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
