@@ -1,13 +1,10 @@
 import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import TestimonialsAvatars from "@/components/TestimonialsAvatars";
 import FAQ from "@/components/FAQ";
+import ButtonGradient from "@/components/ButtonGradient";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -17,12 +14,19 @@ export default function Home() {
       </Suspense>
       <main className="container-fluid mx-auto">
         {/* Banner Section */}
-        <section className="relative bg-gradient-to-b from-green-50 to-blue-100">
-          <div className="mx-auto max-w-[85rem] px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4">
+        <section className="relative hero overflow-hidden min-h-screen">
+          <Image
+            src="/assets/images/ipo3.avif"
+            alt="Background"
+            className="object-cover w-full"
+            fill
+          />
+          <div className="relative hero-overlay bg-neutral bg-opacity-70"></div>
+          <div className="relative z-10 mx-auto max-w-[85rem] px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4">
             <div className="mx-auto max-w-3xl text-center">
-              <div className="mt-5">
-                <h1 className="flex flex-col items-center gap-3 text-4xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
-                  <span className="relative">IPO Club</span>
+              <div className="mt-3">
+                <h1 className="text-white flex flex-col items-center gap-3 text-4xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
+                  <span className="relative text-white">IPO Club</span>
                   <span className="relative">
                     <span className="mr-4 md:mr-5">The Complete Ecosystem for Companies Going</span>
                     <span className="relative inline-block">
@@ -33,13 +37,13 @@ export default function Home() {
                 </h1>
               </div>
               <div className="mt-12 max-w-3xl">
-                <p className="text-xl text-gray-500">
+                <p className="text-xl text-white">
                   From Strategy to Success, Your One-Stop Destination for IPOs
                 </p>
               </div>
-              <div className="mb-2 mt-6 flex items-center space-x-2 rounded-2xl border-gray-300 px-4 py-2">
+              <div className="mb-2 mt-6 flex items-center space-x-2 rounded-2xl px-4 py-2">
                 <div className="space-y-8 mx-auto w-full max-w-md">
-                  <a href="/signin" className="btn btn-block bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto">
+                  <a href="/signin" className="btn bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto border-none">
                     <span className="ml-2">Unlock Free Articles</span>
                   </a>
                 </div>
@@ -50,6 +54,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
         {/* Section 1: Why Choose IPO Club? */}
         <section className="my-16 py-16 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-200">
@@ -292,6 +297,7 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* Section 5: Our Expert Team */}
         <section className="my-16 py-12 bg-gradient-to-r from-blue-100 to-indigo-100">
           <h2 className="text-3xl font-bold text-center mb-8 text-indigo-900">
@@ -305,19 +311,19 @@ export default function Home() {
           <div className="flex justify-center gap-8 flex-wrap mt-10">
             {/* Placeholder for team member cards */}
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img src="team-member1.jpg" alt="Team Member 1" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 1" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Jane Doe</h3>
               <p className="text-gray-600 text-center">Lead Investment Banker</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img src="team-member2.jpg" alt="Team Member 2" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 2" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
               <h3 className="text-xl font-semibold text-center text-indigo-700">John Smith</h3>
               <p className="text-gray-600 text-center">Financial Strategist</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img src="team-member3.jpg" alt="Team Member 3" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 3" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Sarah Johnson</h3>
               <p className="text-gray-600 text-center">Legal Expert</p>
             </div>
@@ -333,19 +339,16 @@ export default function Home() {
           </div>
         </section>
 
-
         {/* Section 6: Join the IPO Club Today */}
-        <section className="my-16">
+
+        <section className="my-16 py-12 bg-neutral text-neutral-content">
           <h2 className="text-3xl font-bold text-center mb-8">Ready to Take Your Company Public?</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center text-white">
             Join IPO Club and gain access to our extensive ecosystem, deep investor network, and industry-leading Merchant Bankers.
           </p>
           <div className="mt-6 flex justify-center space-x-4">
-            <a href="/signup" className="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-slate-600 transition duration-300">
-              Join Now
-            </a>
-            <a href="/schedule-consultation" className="bg-blue-500 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-blue-600 transition duration-300">
-              Schedule a Consultation
+            <a href="/signup">
+              <ButtonGradient />
             </a>
           </div>
         </section>

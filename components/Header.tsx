@@ -5,57 +5,42 @@ import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.png";
 import config from "@/config";
+import Modal from "@/components/Modal";
 
-const links: {
-  href: string;
-  label: string;
-}[] = [
-  {
-    href: "/about",
-    label: "About",
-  },
-    {
-      href: "/blog",
-      label: "Blog",
-    },
-  ];
-
-  const cta: JSX.Element = (
-    <div className="flex space-x-4">
-      <Link href="/signin">
-        <button className="btn bg-slate-900 text-white hover:bg-slate-700">
-          Join {config.appName}
-        </button>
-      </Link>
-    </div>
-  );
-  
+const links: { href: string; label: string }[] = [
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+];
 
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to control modal
 
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
     setIsOpen(false);
   }, [searchParams]);
 
+  // CTA component to open the modal
+  const cta: JSX.Element = (
+    <div className="flex space-x-4">
+      <button
+        className="btn bg-slate-900 text-white hover:bg-slate-700"
+        onClick={() => setIsModalOpen(true)} // Open modal on click
+      >
+        Join {config.appName}
+      </button>
+    </div>
+  );
+
   return (
     <header className="py-2">
-      <nav
-        className="container flex items-center justify-between px-8 py-2 mx-auto"
-        aria-label="Global"
-      >
-        {/* Your logo/name on large screens */}
+      <nav className="container flex items-center justify-between px-8 py-2 mx-auto" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link
-            className="flex items-center gap-2 shrink-0 "
-            href="/"
-            title={`${config.appName} homepage`}
-          >
+          <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
             <Image
               src={logo}
               alt={`${config.appName} logo`}
@@ -68,7 +53,7 @@ const Header = () => {
             <span className="font-extrabold text-lg">{config.appName}</span>
           </Link>
         </div>
-        {/* Burger button to open menu on mobile */}
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -84,16 +69,11 @@ const Header = () => {
               stroke="currentColor"
               className="w-6 h-6 text-base-content"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
         </div>
 
-        {/* Your links on large screens */}
         <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
           {links.map((link) => (
             <Link
@@ -107,22 +87,14 @@ const Header = () => {
           ))}
         </div>
 
-        {/* CTA on large screens */}
         <div className="hidden lg:flex lg:justify-end lg:flex-1">{cta}</div>
       </nav>
 
-      {/* Mobile menu, show/hide based on menu state. */}
+      {/* Mobile menu, show/hide based on menu state */}
       <div className={`relative z-50 ${isOpen ? "" : "hidden"}`}>
-        <div
-          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
-        >
-          {/* Your logo/name on small screens */}
+        <div className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10`}>
           <div className="flex items-center justify-between">
-            <Link
-              className="flex items-center gap-2 shrink-0 "
-              title={`${config.appName} homepage`}
-              href="/"
-            >
+            <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
               <Image
                 src={logo}
                 alt={`${config.appName} logo`}
@@ -148,16 +120,11 @@ const Header = () => {
                 stroke="currentColor"
                 className="w-6 h-6"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
-          {/* Your links on small screens */}
           <div className="flow-root mt-6">
             <div className="py-4">
               <div className="flex flex-col gap-y-4 items-start">
@@ -174,11 +141,15 @@ const Header = () => {
               </div>
             </div>
             <div className="divider"></div>
-            {/* Your CTA on small screens */}
             <div className="flex flex-col">{cta}</div>
           </div>
         </div>
       </div>
+
+      {/* Modal for registration form */}
+       {/* Modal for registration form */}
+       <Modal isModalOpen={isOpen} setIsModalOpen={setIsOpen}>
+      </Modal>
     </header>
   );
 };

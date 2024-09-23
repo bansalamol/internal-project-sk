@@ -1,18 +1,24 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, ReactNode } from "react";
 
 import React from "react";
 
 interface ModalProps {
   isModalOpen: boolean;
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  children: ReactNode; 
+  // children: {
+  //   title: string;
+  //   content: ReactNode;
+  // };
 }
 
 // A simple modal component which can be shown/hidden with a boolean and a function
 // Because of the setIsModalOpen function, you can't use it in a server component.
-const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
+const Modal = ({ isModalOpen, setIsModalOpen,children}: ModalProps) => {
+  if (!isModalOpen) return null;
   return (
     <Transition appear show={isModalOpen} as={Fragment}>
       <Dialog
@@ -46,7 +52,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
               <Dialog.Panel className="relative w-full max-w-3xl h-full overflow-visible transform text-left align-middle shadow-xl transition-all rounded-xl bg-base-100 p-6 md:p-8">
                 <div className="flex justify-between items-center mb-4">
                   <Dialog.Title as="h2" className="font-semibold">
-                    I&apos;m a modal
+                   Im Modal
                   </Dialog.Title>
                   <button
                     className="btn btn-square btn-ghost btn-sm"
@@ -63,7 +69,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }: ModalProps) => {
                   </button>
                 </div>
 
-                <section>And here is my content</section>
+                <section>{children}</section>
               </Dialog.Panel>
             </Transition.Child>
           </div>
