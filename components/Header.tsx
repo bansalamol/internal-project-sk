@@ -8,6 +8,8 @@ import Image from "next/image";
 import logo from "@/app/icon.png";
 import config from "@/config";
 import Modal from "@/components/Modal";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation"; // Import useRouter for redirection
 
 const links: { href: string; label: string }[] = [
   { href: "/about", label: "About" },
@@ -18,11 +20,47 @@ const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to control modal
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  
+  const router = useRouter(); // Initialize router
 
-  // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
+  // Close the modal when the route changes
   useEffect(() => {
     setIsOpen(false);
   }, [searchParams]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleRegistration = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        toast.success("Registration successful. Redirecting to sign-in...");
+        router.push("/signin"); // Redirect to sign-in
+      } else {
+        toast.error("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
+  };
 
   // CTA component to open the modal
   const cta: JSX.Element = (
@@ -147,8 +185,65 @@ const Header = () => {
       </div>
 
       {/* Modal for registration form */}
-       {/* Modal for registration form */}
-       <Modal isModalOpen={isOpen} setIsModalOpen={setIsOpen}>
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        {{
+          title: "Join Us",
+          content: (
+            <form className="space-y-4" onSubmit={handleRegistration}>
+              <div>
+                <label htmlFor="username" className="block text-sm font-medium">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your username"
+                  required
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your password"
+                  required
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <button type="submit" className="btn bg-slate-900 text-white hover:bg-slate-700">
+                Register
+              </button>
+            </form>
+          ),
+        }}
       </Modal>
     </header>
   );

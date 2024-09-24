@@ -25,8 +25,8 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-[85rem] px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mt-3">
-                <h1 className="text-white flex flex-col items-center gap-3 text-4xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
-                  <span className="relative text-white">IPO Club</span>
+                <h1 className="text-white flex flex-col items-center gap-3 text-3xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
+                  <span className="relative text-white uppercase">IPO Club - Your Gateway</span>
                   <span className="relative">
                     <span className="mr-4 md:mr-5">The Complete Ecosystem for Companies Going</span>
                     <span className="relative inline-block">
@@ -43,7 +43,7 @@ export default function Home() {
               </div>
               <div className="mb-2 mt-6 flex items-center space-x-2 rounded-2xl px-4 py-2">
                 <div className="space-y-8 mx-auto w-full max-w-md">
-                  <a href="/signin" className="btn bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto border-none">
+                  <a href="/register" className="btn bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto border-none">
                     <span className="ml-2">Unlock Free Articles</span>
                   </a>
                 </div>
@@ -155,7 +155,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">IPO Readiness Assessment</h3>
+                <h3 className="mt-5 text-lg font-semibold text-black">IPO Readiness Assessment</h3>
                 <p className="mt-4 text-base text-gray-600">Assess your company’s IPO potential and identify key areas of improvement.</p>
               </div>
 
@@ -184,7 +184,7 @@ export default function Home() {
                     <path d="M256 0.5C115.1 0.5 0.5 115.1 0.5 255.992S115.1 511.5 256 511.5c140.9 0 255.5-114.6 255.5-255.508S396.9 0.5 256 0.5z" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">Investor Engagement</h3>
+                <h3 className="mt-5 text-lg font-semibold text-black">Investor Engagement</h3>
                 <p className="mt-4 text-base text-gray-600">Tap into our extensive network of investors to generate demand and ensure a successful offering.</p>
               </div>
 
@@ -239,11 +239,86 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* Section 3: FAQs */}
         <FAQ />
 
+        {/* Section 4: Knowledge */}
+        <section className="my-16 py-16 bg-base-100">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
+              Tired of managing Stripe invoices?
+            </h2>
+
+            <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
+              <div className="bg-error/20 text-error p-8 md:p-12 rounded-lg w-full ">
+                <h3 className="font-bold text-lg mb-4">
+                  Stripe invoices without ZenVoice
+                </h3>
+
+                <ul className="list-disc list-inside space-y-1.5 ">
+                  {/* Pains the user is experiencing by not using your product */}
+                  {[
+                    "Manually create invoices",
+                    "Or pay up to $2 per invoice",
+                    "Waste hours in customer support",
+                    "Can’t update details once sent (VAT, Tax ID)",
+                    "Can't make invoices for previous purchases",
+                  ].map((item, index) => (
+                    <li key={index} className="flex gap-2 items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        className="w-4 h-4 shrink-0 opacity-75"
+                      >
+                        <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
+                <h3 className="font-bold text-lg mb-4">
+                  Stripe invoices + ZenVoice
+                </h3>
+
+                <ul className="list-disc list-inside space-y-1.5 ">
+                  {/* Features of your product fixing the pain (try to match each with/withot lines) */}
+                  {[
+                    "Self-serve invoices",
+                    `One-time payment for unlimited invoices`,
+                    "No more customer support",
+                    "Editable invoices to stay compliant",
+                    "Invoices for any payment, even past ones",
+                  ].map((item, index) => (
+                    <li key={index} className="flex gap-2 items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        className="w-4 h-4 shrink-0 opacity-75"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Section 4: Success Stories */}
-        <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
+        {/* <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
               Companies We've Helped Go Public
@@ -252,9 +327,9 @@ export default function Home() {
               Explore some of our success stories where we helped businesses successfully launch their IPOs.
             </p>
 
-            {/* Case Studies */}
+           
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Case Study 1 */}
+             
               <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500 mx-auto mb-4">
                   <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -265,7 +340,7 @@ export default function Home() {
                 <p className="text-gray-600 text-center mt-2">We guided a major manufacturing firm to successfully launch their IPO.</p>
               </div>
 
-              {/* Case Study 2 */}
+              
               <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 mx-auto mb-4">
                   <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -276,7 +351,7 @@ export default function Home() {
                 <p className="text-gray-600 text-center mt-2">We assisted a tech start-up in their rapid IPO process with full support.</p>
               </div>
 
-              {/* Case Study 3 */}
+              
               <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-500 mx-auto mb-4">
                   <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -288,18 +363,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Call to Action */}
+            
             <div className="text-center mt-12">
               <a href="/case-studies" className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-slate-700 transition duration-300">
                 Read Our Case Studies
               </a>
             </div>
           </div>
-        </section>
-
+        </section> */}
 
         {/* Section 5: Our Expert Team */}
-        <section className="my-16 py-12 bg-gradient-to-r from-blue-100 to-indigo-100">
+        {/* <section className="my-16 py-12 bg-gradient-to-r from-blue-100 to-indigo-100">
           <h2 className="text-3xl font-bold text-center mb-8 text-indigo-900">
             Meet the Experts Behind Your IPO Success
           </h2>
@@ -309,7 +383,6 @@ export default function Home() {
           </p>
 
           <div className="flex justify-center gap-8 flex-wrap mt-10">
-            {/* Placeholder for team member cards */}
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 1" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Jane Doe</h3>
@@ -337,10 +410,9 @@ export default function Home() {
               Meet the Team
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 6: Join the IPO Club Today */}
-
         <section className="my-16 py-12 bg-neutral text-neutral-content">
           <h2 className="text-3xl font-bold text-center mb-8">Ready to Take Your Company Public?</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center text-white">
