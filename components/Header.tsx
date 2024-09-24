@@ -9,7 +9,7 @@ import logo from "@/app/icon.png";
 import config from "@/config";
 import Modal from "@/components/Modal";
 import { toast } from "react-hot-toast";
-import { useRouter } from "next/navigation"; // Import useRouter for redirection
+import { useRouter } from "next/navigation";
 
 const links: { href: string; label: string }[] = [
   { href: "/about", label: "About" },

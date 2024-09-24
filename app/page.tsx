@@ -317,6 +317,18 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Section 5: Ecosystem */}
+        <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
+              Ecosystem
+            </h2>
+            <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
+              
+            </div>
+          </div>
+        </section>
+
         {/* Section 4: Success Stories */}
         {/* <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
           <div className="max-w-6xl mx-auto">

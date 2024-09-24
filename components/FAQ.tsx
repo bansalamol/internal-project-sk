@@ -94,7 +94,7 @@ const FaqItem = ({ item }: { item: FAQItemProps }) => {
 const FAQ = () => {
   return (
     <section className="my-16 py-16" id="faq">
-      <div className="py-16 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex basis-1/2 flex-col text-left">
           <p className="mb-4 inline-block font-semibold">FAQ</p>
           <h2 className="text-3xl font-bold text-base-content lg:text-5xl">Frequently Asked Questions</h2>
