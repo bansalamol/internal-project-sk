@@ -8,6 +8,8 @@ import config from "@/config";
 import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import React from 'react';
+
 
 export default function Login() {
   const supabase = createClient();
