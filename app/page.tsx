@@ -57,7 +57,7 @@ export default function Home() {
 
 
         {/* Section 1: Why Choose IPO Club? */}
-        <section className="my-16 py-16 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-200">
+        <section className="py-16 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-200">
           <h2 className="text-4xl font-bold text-center mb-8">
             Transform Your IPO Journey with Comprehensive Support
           </h2>
@@ -135,10 +135,10 @@ export default function Home() {
         </section>
 
         {/* Section 2: Our Services */}
-        <section className="bg-green-50/60" id="services">
+        <section className="py-16 bg-green-50/60" id="services">
           <div className="mx-auto max-w-5xl px-8 py-16">
             <div className="mb-20 flex w-full flex-col text-center">
-              <p className="mb-8 font-medium">A Full Suite of Services for Every Step of Your IPO</p>
+              <p className="mb-8 font-bold text-xl">A Full Suite of Services for Every Step of Your IPO</p>
               <h2 className="text-3xl font-bold tracking-tight lg:text-4xl">
                 We specialize in a comprehensive range of services designed to support your IPO at every stage.
               </h2>
@@ -243,8 +243,109 @@ export default function Home() {
         {/* Section 3: FAQs */}
         <FAQ />
 
-        {/* Section 4: Knowledge */}
-        <section className="my-16 py-16 bg-base-100">
+        {/* Section 4: Ecosystem */}
+        <section className="py-16 relative overflow-hidden">
+          <div className="max-w-6xl mx-auto px-6">
+            {/* Background Shape */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="w-96 h-96 bg-gradient-to-r from-blue-300 to-cyan-400 rounded-full blur-3xl opacity-50 transform scale-125 -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="w-80 h-80 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full blur-2xl opacity-30 transform scale-110 translate-x-1/2 translate-y-1/3"></div>
+            </div>
+
+            <h2 className="relative text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
+              Ecosystem
+            </h2>
+
+            {/* Image and Content Row */}
+            <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-12 z-10">
+              {/* Image on the Left */}
+              <div className="md:w-1/2 flex justify-center">
+                <Image
+                  src="/assets/images/ecosystem2.webp"
+                  alt="IPO Ecosystem"
+                  width={500}
+                  height={500}
+                  className="max-w-full h-auto rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
+                />
+              </div>
+
+              {/* Content on the Right */}
+              <div className="md:w-1/3 text-left">
+                <h3 className="text-2xl font-bold text-blue-700 mb-6">Discover Our Ecosystem</h3>
+                <p className="text-lg text-gray-600 mb-4">
+                  The IPO Club is an exclusive network that brings together industry experts, merchant bankers, investors, auditors, and legal professionals. We streamline the complexities of IPOs by connecting you with the right resources.
+                </p>
+                <ul className="list-disc pl-5 text-gray-700 mb-4">
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Merchant Bankers:</span> Assisting you in navigating through the financial landscape.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Legal Counsels:</span> Ensuring all legal requirements are met.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Industry Experts:</span> Offering deep insights and guidance.</li>
+                  <li><span className="font-semibold text-blue-700">Investors:</span> Connecting you with potential investors.</li>
+                </ul>
+                <a href="#" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: Success Stories */}
+        <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
+              Companies We've Helped Go Public
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto text-center mb-10">
+              Explore some of our success stories where we helped businesses successfully launch their IPOs.
+            </p>
+
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500 mx-auto mb-4">
+                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-9H8l3.293-3.293a1 1 0 00-1.414-1.414L6 12.586 10.586 17a1 1 0 001.414-1.414L9 13h2v5a1 1 0 102 0v-5h2a1 1 0 100-2h-3V8a1 1 0 10-2 0v5z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 text-center">Manufacturing Company</h3>
+                <p className="text-gray-600 text-center mt-2">We guided a major manufacturing firm to successfully launch their IPO.</p>
+              </div>
+
+
+              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 mx-auto mb-4">
+                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2a10 10 0 00-7.071 17.071l-2.12 2.121a1 1 0 001.414 1.415l2.121-2.122A10 10 0 1012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-3-8h2V7a1 1 0 112 0v5h2a1 1 0 010 2h-6a1 1 0 010-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 text-center">Technology Start-Up</h3>
+                <p className="text-gray-600 text-center mt-2">We assisted a tech start-up in their rapid IPO process with full support.</p>
+              </div>
+
+
+              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
+                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-500 mx-auto mb-4">
+                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M13 7h-2v6h6v-2h-4V7zm-1-5C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-800 text-center">Consumer Goods SME</h3>
+                <p className="text-gray-600 text-center mt-2">Our team helped an SME in consumer goods secure a successful public launch.</p>
+              </div>
+            </div>
+
+
+            <div className="text-center mt-12">
+              <a href="/case-studies" className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-slate-700 transition duration-300">
+                Read Our Case Studies
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: Knowledge */}
+        <section className="py-16 bg-base-100">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
               Tired of managing Stripe invoices?
@@ -317,75 +418,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section 5: Ecosystem */}
-        {/* <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
-              Ecosystem
-            </h2>
-            <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
-              
-            </div>
-          </div>
-        </section> */}
 
-        {/* Section 4: Success Stories */}
-        {/* <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
-              Companies We've Helped Go Public
-            </h2>
-            <p className="text-lg text-gray-700 max-w-2xl mx-auto text-center mb-10">
-              Explore some of our success stories where we helped businesses successfully launch their IPOs.
-            </p>
-
-           
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             
-              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-cyan-500 mx-auto mb-4">
-                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-9H8l3.293-3.293a1 1 0 00-1.414-1.414L6 12.586 10.586 17a1 1 0 001.414-1.414L9 13h2v5a1 1 0 102 0v-5h2a1 1 0 100-2h-3V8a1 1 0 10-2 0v5z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 text-center">Manufacturing Company</h3>
-                <p className="text-gray-600 text-center mt-2">We guided a major manufacturing firm to successfully launch their IPO.</p>
-              </div>
-
-              
-              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-500 mx-auto mb-4">
-                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2a10 10 0 00-7.071 17.071l-2.12 2.121a1 1 0 001.414 1.415l2.121-2.122A10 10 0 1012 2zm0 18a8 8 0 110-16 8 8 0 010 16zm-3-8h2V7a1 1 0 112 0v5h2a1 1 0 010 2h-6a1 1 0 010-2z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 text-center">Technology Start-Up</h3>
-                <p className="text-gray-600 text-center mt-2">We assisted a tech start-up in their rapid IPO process with full support.</p>
-              </div>
-
-              
-              <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-2xl transition duration-300">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-500 mx-auto mb-4">
-                  <svg className="text-white" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13 7h-2v6h6v-2h-4V7zm-1-5C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 110-16 8 8 0 010 16z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-800 text-center">Consumer Goods SME</h3>
-                <p className="text-gray-600 text-center mt-2">Our team helped an SME in consumer goods secure a successful public launch.</p>
-              </div>
-            </div>
-
-            
-            <div className="text-center mt-12">
-              <a href="/case-studies" className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-slate-700 transition duration-300">
-                Read Our Case Studies
-              </a>
-            </div>
-          </div>
-        </section> */}
-
-        {/* Section 5: Our Expert Team */}
-        {/* <section className="my-16 py-12 bg-gradient-to-r from-blue-100 to-indigo-100">
+        {/* Section 7: Our Expert Team */}
+        <section className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100">
           <h2 className="text-3xl font-bold text-center mb-8 text-indigo-900">
             Meet the Experts Behind Your IPO Success
           </h2>
@@ -396,19 +431,31 @@ export default function Home() {
 
           <div className="flex justify-center gap-8 flex-wrap mt-10">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 1" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+                alt="Team Member 1"
+                className="rounded-full mb-4 w-32 h-32 object-cover mx-auto shadow-md"
+              />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Jane Doe</h3>
               <p className="text-gray-600 text-center">Lead Investment Banker</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 2" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <img
+                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+                alt="Team Member 2"
+                className="rounded-full mb-4 w-32 h-32 object-cover mx-auto shadow-md"
+              />
               <h3 className="text-xl font-semibold text-center text-indigo-700">John Smith</h3>
               <p className="text-gray-600 text-center">Financial Strategist</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Team Member 3" className="rounded-full mb-4 w-32 mx-auto shadow-md" />
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80"
+                alt="Team Member 3"
+                className="rounded-full mb-4 w-32 h-32 object-cover mx-auto shadow-md"
+              />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Sarah Johnson</h3>
               <p className="text-gray-600 text-center">Legal Expert</p>
             </div>
@@ -422,10 +469,10 @@ export default function Home() {
               Meet the Team
             </a>
           </div>
-        </section> */}
+        </section>
 
-        {/* Section 6: Join the IPO Club Today */}
-        <section className="my-16 py-12 bg-neutral text-neutral-content">
+        {/* Section 8: Join the IPO Club Today */}
+        <section className="py-16 bg-neutral text-neutral-content">
           <h2 className="text-3xl font-bold text-center mb-8">Ready to Take Your Company Public?</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center text-white">
             Join IPO Club and gain access to our extensive ecosystem, deep investor network, and industry-leading Merchant Bankers.

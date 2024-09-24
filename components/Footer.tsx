@@ -8,7 +8,7 @@ import logo from "@/app/icon.png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-b from-green-50 to-blue-100">
+    <footer className="py-16 relative bg-gradient-to-b from-green-50 to-blue-100">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -32,7 +32,7 @@ const Footer = () => {
 
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Quick Links</h2>
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-black">Quick Links</h2>
               <ul className="text-gray-800 dark:text-gray-800 font-medium">
                 <li><Link href="/about" className="link link-hover">About IPO Club</Link></li>
                 <li><Link href="/services" className="link link-hover">Services</Link></li>
@@ -43,14 +43,14 @@ const Footer = () => {
             </div>
 
             <div>
-              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">Legal</h2>
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-black">Legal</h2>
               <ul className="text-gray-800 dark:text-gray-800 font-medium">
                 <li><Link href="/tos" className="link link-hover">Terms of Service</Link></li>
                 <li><Link href="/privacy-policy" className="link link-hover">Privacy Policy</Link></li>
               </ul>
             </div>
             <div className="flex flex-col text-center md:text-left">
-              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-white">
+              <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-black">
                 CONTACT INFO
               </h2>
               <div className="text-gray-800 dark:text-gray-800 font-medium">
