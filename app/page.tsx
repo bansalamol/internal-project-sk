@@ -318,7 +318,7 @@ export default function Home() {
         </section>
 
         {/* Section 5: Ecosystem */}
-        <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
+        {/* <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
               Ecosystem
@@ -327,7 +327,7 @@ export default function Home() {
               
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 4: Success Stories */}
         {/* <section className="my-16 py-12 bg-gradient-to-r from-cyan-100 to-blue-50">
