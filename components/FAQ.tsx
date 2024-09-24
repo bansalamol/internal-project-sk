@@ -62,18 +62,16 @@ const FaqItem = ({ item }: { item: FAQItemProps }) => {
             width="16"
             height="2"
             rx="1"
-            className={`transform origin-center transition duration-200 ease-out ${
-              isOpen && "rotate-180"
-            }`}
+            className={`transform origin-center transition duration-200 ease-out ${isOpen && "rotate-180"
+              }`}
           />
           <rect
             y="7"
             width="16"
             height="2"
             rx="1"
-            className={`transform origin-center rotate-90 transition duration-200 ease-out ${
-              isOpen && "rotate-180 hidden"
-            }`}
+            className={`transform origin-center rotate-90 transition duration-200 ease-out ${isOpen && "rotate-180 hidden"
+              }`}
           />
         </svg>
       </button>
@@ -95,15 +93,12 @@ const FaqItem = ({ item }: { item: FAQItemProps }) => {
 
 const FAQ = () => {
   return (
-    <section className="bg-base-200" id="faq">
-      <div className="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
-        <div className="flex flex-col text-left basis-1/2">
-          <p className="inline-block font-semibold text-primary mb-4">FAQ</p>
-          <p className="sm:text-4xl text-3xl font-extrabold text-base-content">
-            Frequently Asked Questions
-          </p>
+    <section className="my-16 py-16" id="faq">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+        <div className="flex basis-1/2 flex-col text-left">
+          <p className="mb-4 inline-block font-semibold">FAQ</p>
+          <h2 className="text-3xl font-bold text-base-content lg:text-5xl">Frequently Asked Questions</h2>
         </div>
-
         <ul className="basis-1/2">
           {faqList.map((item, i) => (
             <FaqItem key={i} item={item} />

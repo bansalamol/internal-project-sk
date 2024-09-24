@@ -5,54 +5,80 @@ import type { JSX } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import ButtonSignin from "./ButtonSignin";
 import logo from "@/app/icon.png";
 import config from "@/config";
+import Modal from "@/components/Modal";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-const links: {
-  href: string;
-  label: string;
-}[] = [
-  {
-    href: "/#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "/#testimonials",
-    label: "Reviews",
-  },
-  {
-    href: "/#faq",
-    label: "FAQ",
-  },
+const links: { href: string; label: string }[] = [
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
-const cta: JSX.Element = <ButtonSignin extraStyle="btn-primary" />;
-
-// A header with a logo on the left, links in the center (like Pricing, etc...), and a CTA (like Get Started or Login) on the right.
-// The header is responsive, and on mobile, the links are hidden behind a burger button.
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to control modal
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  
+  const router = useRouter(); // Initialize router
 
-  // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
+  // Close the modal when the route changes
   useEffect(() => {
     setIsOpen(false);
   }, [searchParams]);
 
-  return (
-    <header className="bg-base-200">
-      <nav
-        className="container flex items-center justify-between px-8 py-4 mx-auto"
-        aria-label="Global"
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleRegistration = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        toast.success("Registration successful. Redirecting to sign-in...");
+        router.push("/signin"); // Redirect to sign-in
+      } else {
+        toast.error("Registration failed. Please try again.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+    }
+  };
+
+  // CTA component to open the modal
+  const cta: JSX.Element = (
+    <div className="flex space-x-4">
+      <button
+        className="btn bg-slate-900 text-white hover:bg-slate-700"
+        onClick={() => setIsModalOpen(true)} // Open modal on click
       >
-        {/* Your logo/name on large screens */}
+        Join {config.appName}
+      </button>
+    </div>
+  );
+
+  return (
+    <header className="py-2">
+      <nav className="container flex items-center justify-between px-8 py-2 mx-auto" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link
-            className="flex items-center gap-2 shrink-0 "
-            href="/"
-            title={`${config.appName} homepage`}
-          >
+          <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
             <Image
               src={logo}
               alt={`${config.appName} logo`}
@@ -65,7 +91,7 @@ const Header = () => {
             <span className="font-extrabold text-lg">{config.appName}</span>
           </Link>
         </div>
-        {/* Burger button to open menu on mobile */}
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -81,16 +107,11 @@ const Header = () => {
               stroke="currentColor"
               className="w-6 h-6 text-base-content"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
         </div>
 
-        {/* Your links on large screens */}
         <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
           {links.map((link) => (
             <Link
@@ -104,22 +125,14 @@ const Header = () => {
           ))}
         </div>
 
-        {/* CTA on large screens */}
         <div className="hidden lg:flex lg:justify-end lg:flex-1">{cta}</div>
       </nav>
 
-      {/* Mobile menu, show/hide based on menu state. */}
+      {/* Mobile menu, show/hide based on menu state */}
       <div className={`relative z-50 ${isOpen ? "" : "hidden"}`}>
-        <div
-          className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300`}
-        >
-          {/* Your logo/name on small screens */}
+        <div className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10`}>
           <div className="flex items-center justify-between">
-            <Link
-              className="flex items-center gap-2 shrink-0 "
-              title={`${config.appName} homepage`}
-              href="/"
-            >
+            <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
               <Image
                 src={logo}
                 alt={`${config.appName} logo`}
@@ -145,16 +158,11 @@ const Header = () => {
                 stroke="currentColor"
                 className="w-6 h-6"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
-          {/* Your links on small screens */}
           <div className="flow-root mt-6">
             <div className="py-4">
               <div className="flex flex-col gap-y-4 items-start">
@@ -171,11 +179,72 @@ const Header = () => {
               </div>
             </div>
             <div className="divider"></div>
-            {/* Your CTA on small screens */}
             <div className="flex flex-col">{cta}</div>
           </div>
         </div>
       </div>
+
+      {/* Modal for registration form */}
+      <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        {{
+          title: "Join Us",
+          content: (
+            <form className="space-y-4" onSubmit={handleRegistration}>
+              <div>
+                <label htmlFor="username" className="block text-sm font-medium">
+                  Username
+                </label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your username"
+                  required
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your email"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Enter your password"
+                  required
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <button type="submit" className="btn bg-slate-900 text-white hover:bg-slate-700">
+                Register
+              </button>
+            </form>
+          ),
+        }}
+      </Modal>
     </header>
   );
 };
