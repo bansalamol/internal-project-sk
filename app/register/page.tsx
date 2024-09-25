@@ -1,89 +1,54 @@
 "use client";
 
+import React from 'react';
 import Link from "next/link";
 import config from "@/config";
-import { Suspense, useState, FormEvent, ChangeEvent } from "react";
+import { Suspense, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { toast } from "react-toastify";
+import MessageModal from "@/components/MessageModal";
 
 const Register = () => {
-    const [formData, setFormData] = useState({
-        username: "",
-        email: "",
-        mobile: "",
-        password: "",
-        confirmPassword: "",
-    });
+    const [showModal, setShowModal] = useState(false);
+    const [modalMessage, setModalMessage] = useState('');
+    const [isError, setIsError] = useState(false);
 
-    const [error, setError] = useState<string>("");
-    const [success, setSuccess] = useState<string>("");
-
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
-    };
-
-    const validateEmail = (email: string): boolean => {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
-    };
-
-    const validateMobile = (mobile: string): boolean => {
-        const regex = /^[0-9]{10}$/;
-        return regex.test(mobile);
-    };
-
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const { username, email, mobile, password, confirmPassword } = formData;
 
-        if (!validateEmail(email)) {
-            setError("Please enter a valid email address.");
-            return;
-        }
-        if (!validateMobile(mobile)) {
-            setError("Please enter a valid mobile number.");
-            return;
-        }
-        if (password !== confirmPassword) {
-            setError("Passwords do not match.");
-            return;
-        }
-        if (password.length < 6) {
-            setError("Password must be at least 6 characters long.");
-            return;
-        }
-
-        setError(""); // Reset error state
-
-        // Simulate a backend call for email duplication check
-        const isEmailDuplicate = false; // Assume the check is done
-
-        if (isEmailDuplicate) {
-            setError("Email already exists.");
-            return;
-        }
+        const form = event.currentTarget;
+        const formData = new FormData(event.currentTarget);
+        const name = formData.get("name") as string;
+        const mobile = formData.get("mobile") as string;
+        const email = formData.get("email") as string;
+        const role = formData.get("role") as string;
 
         try {
-            // Send the data to your backend for registration
-            // const response = await fetch('/api/register', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ username, email, mobile, password }),
-            // });
-
-            // Simulate successful registration
-            setSuccess("Registration successful!");
-            setFormData({
-                username: "",
-                email: "",
-                mobile: "",
-                password: "",
-                confirmPassword: "",
+            const response = await fetch("/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, mobile, email, role }),
             });
+
+            if (response.ok) {
+                setModalMessage('Thank you for joining the IPO Club! We appreciate your interest. Our team will get in touch with you shortly to provide more details and answer any questions you may have.');
+                setIsError(false);
+                setShowModal(true); // Show modal on success
+                form.reset();
+            } else {
+                const errorData = await response.json();
+                toast.error(errorData.message);
+            }
         } catch (error) {
-            setError("Registration failed. Please try again.");
+            toast.error("An unexpected error occurred. Please try again.");
         }
+    };
+
+    const closeModal = () => {
+        setShowModal(false); // Hide the modal
     };
 
     return (
@@ -111,69 +76,81 @@ const Register = () => {
                 </div>
 
                 <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg p-8 mt-10">
-                    <h2 className="text-3xl font-bold text-center mb-6">Register</h2>
-                    {error && <div className="text-red-500 mb-4 text-center">{error}</div>}
-                    {success && <div className="text-green-500 mb-4 text-center">{success}</div>}
+                    <h2 className="text-3xl font-bold text-center mb-6">Join {config.appName}</h2>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div>
-                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Name</label>
                             <input
-                                type="email"
-                                id="email"
-                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 transition duration-200"
-                                placeholder="name@flowbite.com"
+                                type="text"
+                                id="name"
+                                name="name"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                                placeholder="John Doe"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="mobile" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mobile</label>
+                            <label htmlFor="mobile" className="block mb-2 text-sm font-medium text-gray-900">Mobile</label>
                             <input
-                                type="number"
+                                type="tel"
                                 id="mobile"
-                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 transition duration-200"
+                                name="mobile"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
                                 placeholder="1234567890"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Email</label>
                             <input
-                                type="password"
-                                id="password"
-                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 transition duration-200"
+                                type="email"
+                                id="email"
+                                name="email"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                                placeholder="name@domain.com"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="repeat-password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password</label>
-                            <input
-                                type="password"
-                                id="repeat-password"
-                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 transition duration-200"
+                            <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900">Register as</label>
+                            <select
+                                id="role"
+                                name="role"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
                                 required
-                            />
-                        </div>
-                        <div className="flex items-start mb-4">
-                            <div className="flex items-center h-5">
-                                <input
-                                    id="terms"
-                                    type="checkbox"
-                                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600"
-                                    required
-                                />
-                            </div>
-                            <label className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                                I agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>
-                            </label>
+                            >
+                                <option value="">Select role</option>
+                                <option value="Company planning for an IPO">Company planning for an IPO</option>
+                                <option value="Institutional Investor">Institutional Investor</option>
+                                <option value="CA/CS/MBA/Practising Professionals">CA/CS/MBA/Practising Professionals</option>
+                                <option value="Merchant Banker">Merchant Banker</option>
+                                <option value="Individual Investor">Individual Investor</option>
+                                <option value="Legal Counsels">Legal Counsels</option>
+                                <option value="Industry Expert">Industry Expert</option>
+                                <option value="Rating Agencies">Rating Agencies</option>
+                                <option value="FPI">FPI</option>
+                                <option value="HNI Investor">HNI Investor</option>
+                                <option value="RTA">RTA</option>
+                                <option value="Investment Advisor">Investment Advisor</option>
+                            </select>
                         </div>
                         <button
                             type="submit"
-                            className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition duration-200">
-                            Register New Account
+                            className="btn bg-slate-900 text-white hover:bg-slate-700"
+                        >
+                            Join {config.appName}
                         </button>
                     </form>
                 </div>
+
+                {showModal && (
+                    <MessageModal
+                        message={modalMessage}
+                        isError={isError}
+                        onClose={closeModal}
+                    />
+                )}
             </main>
             <Footer />
         </>

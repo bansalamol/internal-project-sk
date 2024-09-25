@@ -12,7 +12,7 @@ import React from 'react';
 
 const links: { href: string; label: string }[] = [
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
+  { href: "/services", label: "Services" },
 ];
 
 const Header = () => {

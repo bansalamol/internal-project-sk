@@ -55,8 +55,8 @@ const Footer = () => {
               </h2>
               <div className="text-gray-800 dark:text-gray-800 font-medium">
                 <p>Office: 123 IPO St, Business City</p>
-                <a href="mailto:info@ipo-club.com" className="link link-hover">
-                  Email: info@ipo-club.com
+                <a href="mailto:sachin@ipoclub.in" className="link link-hover">
+                  Email: sachin@ipoclub.in
                 </a>
                 <a href="tel:+11234567890"><p className="link link-hover">Talk to an Expert now</p></a>
               </div>
@@ -94,7 +94,6 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-
         </div>
       </div>
     </footer>
