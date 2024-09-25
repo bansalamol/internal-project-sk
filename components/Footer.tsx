@@ -37,8 +37,6 @@ const Footer = () => {
                 <li><Link href="/about" className="link link-hover">About IPO Club</Link></li>
                 <li><Link href="/services" className="link link-hover">Services</Link></li>
                 <li><Link href="/contact" className="link link-hover">Contact Us</Link></li>
-                <li><Link href="/blog" className="link link-hover">Blog</Link></li>
-                <li><Link href="/faqs" className="link link-hover">FAQs</Link></li>
               </ul>
             </div>
 

@@ -1,11 +1,15 @@
 # Auto generated, please do not modify# auto generated file, used to cache recently opened files
-c:\Users\dell\internal-project-sk\.env.example
+c:\Users\dell\internal-project-sk\components\Footer.tsx
+c:\Users\dell\internal-project-sk\app\contact\page.tsx
+c:\Users\dell\internal-project-sk\app\services\page.tsx
+c:\Users\dell\internal-project-sk\app\about\page.tsx
+c:\Users\dell\internal-project-sk\app\api\register\route.ts
+c:\Users\dell\internal-project-sk\app\register\page.tsx
 c:\Users\dell\internal-project-sk\components\Header.tsx
+c:\Users\dell\internal-project-sk\.env.example
 c:\Users\dell\internal-project-sk\.env.local
 c:\Users\dell\internal-project-sk\.gitignore
 c:\Users\dell\internal-project-sk\config.ts
-c:\Users\dell\internal-project-sk\app\api\register\route.ts
-c:\Users\dell\internal-project-sk\app\register\page.tsx
 c:\Users\dell\internal-project-sk\app\signin\page.tsx
 c:\Users\dell\internal-project-sk\components\MessageModal.tsx
 c:\Users\dell\internal-project-sk\app\layout.tsx
@@ -15,7 +19,6 @@ c:\Users\dell\internal-project-sk\libs\supabase\client.ts
 c:\Users\dell\internal-project-sk\app\api\lead\route.ts
 c:\Users\dell\internal-project-sk\lib\dbConnect.ts
 c:\Users\dell\internal-project-sk\app\api\auth\callback\route.ts
-c:\Users\dell\internal-project-sk\components\Footer.tsx
 c:\Users\dell\internal-project-sk\schemas\signUpSchema.ts
 c:\Users\dell\internal-project-sk\lib\resend.ts
 c:\Users\dell\internal-project-sk\schemas\siginInSchema.ts
