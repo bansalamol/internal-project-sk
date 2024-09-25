@@ -293,7 +293,7 @@ export default function Home() {
         <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
-              Companies We've Helped Go Public
+              Companies We&apos;ve Helped Go Public
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto text-center mb-10">
               Explore some of our success stories where we helped businesses successfully launch their IPOs.
@@ -431,9 +431,11 @@ export default function Home() {
 
           <div className="flex justify-center gap-8 flex-wrap mt-10">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
                 alt="Team Member 1"
+                width={128}
+                height={128}
                 className="rounded-full mb-4 w-32 h-32 object-cover mx-auto shadow-md"
               />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Jane Doe</h3>
@@ -441,9 +443,11 @@ export default function Home() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
                 alt="Team Member 2"
+                width={128}
+                height={128}
                 className="rounded-full mb-4 w-32 h-32 object-cover mx-auto shadow-md"
               />
               <h3 className="text-xl font-semibold text-center text-indigo-700">John Smith</h3>
@@ -451,15 +455,18 @@ export default function Home() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-xs">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80"
                 alt="Team Member 3"
+                width={128}
+                height={128}
                 className="rounded-full mb-4 w-32 h-32 object-cover mx-auto shadow-md"
               />
               <h3 className="text-xl font-semibold text-center text-indigo-700">Sarah Johnson</h3>
               <p className="text-gray-600 text-center">Legal Expert</p>
             </div>
           </div>
+
 
           <div className="text-center mt-12">
             <a

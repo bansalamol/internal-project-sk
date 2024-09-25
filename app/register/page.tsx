@@ -29,7 +29,7 @@ const Register = () => {
     };
 
     const validateMobile = (mobile: string): boolean => {
-        const regex = /^[0-9]{10}$/; // Adjust the regex according to your mobile format
+        const regex = /^[0-9]{10}$/;
         return regex.test(mobile);
     };
 

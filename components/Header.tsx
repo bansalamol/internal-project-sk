@@ -7,9 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/icon.png";
 import config from "@/config";
-import Modal from "@/components/Modal";
-import { toast } from "react-hot-toast";
-import { useRouter } from "next/navigation";
 import React from 'react';
 
 
@@ -21,10 +18,6 @@ const links: { href: string; label: string }[] = [
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // State to control modal
-
-
-  const router = useRouter(); // Initialize router
 
   // Close the modal when the route changes
   useEffect(() => {
