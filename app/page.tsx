@@ -514,7 +514,7 @@ export default function Home() {
             Join IPO Club and gain access to our extensive ecosystem, deep investor network, and industry-leading Merchant Bankers.
           </p>
           <div className="mt-6 flex justify-center space-x-4">
-            <a href="/signup">
+            <a href="/register">
               <ButtonGradient />
             </a>
           </div>
