@@ -1,18 +1,18 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import config from "@/config";
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { toast } from "react-toastify";
-import MessageModal from "@/components/MessageModal";
+
 
 const Register = () => {
-    const [showModal, setShowModal] = useState(false);
-    const [modalMessage, setModalMessage] = useState('');
-    const [isError, setIsError] = useState(false);
+    const router = useRouter();
+    const [shouldRedirect, setShouldRedirect] = useState(false);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -34,10 +34,13 @@ const Register = () => {
             });
 
             if (response.ok) {
-                setModalMessage('Thank you for joining the IPO Club! We appreciate your interest. Our team will get in touch with you shortly to provide more details and answer any questions you may have.');
-                setIsError(false);
-                setShowModal(true); // Show modal on success
+                // Store modal message and state in session storage
+                sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO-club. Our team will get in touch with you shortly to provide more details and answer any questions you may have.');
+                sessionStorage.setItem('isError', 'false');
                 form.reset();
+
+                // Set redirect state
+                setShouldRedirect(true);
             } else {
                 const errorData = await response.json();
                 toast.error(errorData.message);
@@ -47,9 +50,12 @@ const Register = () => {
         }
     };
 
-    const closeModal = () => {
-        setShowModal(false); // Hide the modal
-    };
+    useEffect(() => {
+        if (shouldRedirect) {
+            router.push('/');
+        }
+    }, [shouldRedirect, router]);
+
 
     return (
         <>
@@ -144,13 +150,7 @@ const Register = () => {
                     </form>
                 </div>
 
-                {showModal && (
-                    <MessageModal
-                        message={modalMessage}
-                        isError={isError}
-                        onClose={closeModal}
-                    />
-                )}
+
             </main>
             <Footer />
         </>

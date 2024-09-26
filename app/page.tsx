@@ -1,12 +1,41 @@
-import { Suspense } from "react";
+"use client";
+
+import { Suspense, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TestimonialsAvatars from "@/components/TestimonialsAvatars";
 import FAQ from "@/components/FAQ";
 import ButtonGradient from "@/components/ButtonGradient";
 import Image from "next/image";
+import MessageModal from "@/components/MessageModal";
+
+
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [isError, setIsError] = useState(false);
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  useEffect(() => {
+    // Check sessionStorage for modal data
+    const storedMessage = sessionStorage.getItem('modalMessage');
+    const storedError = sessionStorage.getItem('isError');
+
+    if (storedMessage) {
+      setModalMessage(storedMessage);
+      setIsError(storedError === 'true');
+      setShowModal(true);
+
+      // Clear sessionStorage after showing the modal
+      sessionStorage.removeItem('modalMessage');
+      sessionStorage.removeItem('isError');
+    }
+  }, []); // Run only once on component mount
+
   return (
     <>
       <Suspense>
@@ -490,6 +519,14 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        {showModal && (
+          <MessageModal
+            message={modalMessage}
+            isError={isError}
+            onClose={closeModal}
+          />
+        )}
       </main>
 
       <Footer />
