@@ -4,10 +4,10 @@ import { Suspense, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TestimonialsAvatars from "@/components/TestimonialsAvatars";
-import FAQ from "@/components/FAQ";
 import ButtonGradient from "@/components/ButtonGradient";
 import Image from "next/image";
 import MessageModal from "@/components/MessageModal";
+import IPOCLUBFAQ from "@/components/IPOCLUBFAQ";
 
 
 
@@ -45,7 +45,7 @@ export default function Home() {
         {/* Banner Section */}
         <section className="relative hero overflow-hidden min-h-screen">
           <Image
-            src="/assets/images/ipo3.avif"
+            src="/assets/images/banner1.avif"
             alt="Background"
             className="object-cover w-full"
             fill
@@ -54,28 +54,27 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-[85rem] px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mt-3">
-                <h1 className="text-white flex flex-col items-center gap-3 text-3xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
-                  <span className="relative text-white uppercase">IPO Club - Your Gateway</span>
+                <h1 className="text-white text-center gap-3 text-3xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
+                  <span className="relative text-white uppercase">IPO Club - Your Gateway to capital</span>
                   <span className="relative">
-                    <span className="mr-4 md:mr-5">The Complete Ecosystem for Companies Going</span>
+                    <span className="mr-4 md:mr-5 text-3xl block my-3">The Complete Ecosystem for Companies Going</span>
                     <span className="relative inline-block">
-                      <span className="absolute inset-0 bg-accent -rotate-1 rounded-md"></span>
+                      <span className="absolute inset-0 bg-accent rounded-md"></span>
                       <span className="relative z-10 px-4 py-2">Public</span>
                     </span>
                   </span>
                 </h1>
+
               </div>
               <div className="mt-12 max-w-3xl">
                 <p className="text-xl text-white">
                   From Strategy to Success, Your One-Stop Destination for IPOs
                 </p>
               </div>
-              <div className="mb-2 mt-6 flex items-center space-x-2 rounded-2xl px-4 py-2">
-                <div className="space-y-8 mx-auto w-full max-w-md">
-                  <a href="/register" className="btn bg-indigo-600 text-white hover:bg-indigo-700 sm:w-auto border-none">
-                    <span className="ml-2">Unlock Free Articles</span>
-                  </a>
-                </div>
+              <div className="mt-6 flex justify-center space-x-4">
+                <a href="/register">
+                  <ButtonGradient />
+                </a>
               </div>
               <div className="mt-10">
                 <TestimonialsAvatars priority={true} />
@@ -169,7 +168,7 @@ export default function Home() {
             <div className="mb-20 flex w-full flex-col text-center">
               <p className="mb-8 font-bold text-xl">A Full Suite of Services for Every Step of Your IPO</p>
               <h2 className="text-3xl font-bold tracking-tight lg:text-4xl">
-                We specialize in a comprehensive range of services designed to support your IPO at every stage.
+                We specialize in a comprehensive range of professional services designed to support your IPO at every stage.
               </h2>
             </div>
             <div className="grid grid-cols-1 gap-12 text-center sm:grid-cols-2 md:grid-cols-3 lg:gap-y-16">
@@ -217,7 +216,7 @@ export default function Home() {
                 <p className="mt-4 text-base text-gray-600">Tap into our extensive network of investors to generate demand and ensure a successful offering.</p>
               </div>
 
-              {/* Regulatory Compliance */}
+              {/* Audit and compliances */}
               <div>
                 <div className="relative mx-auto flex items-center justify-center">
                   <svg className="text-yellow-100" width="66" height="68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -227,7 +226,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">Regulatory Compliance</h3>
+                <h3 className="mt-8 text-lg font-semibold text-black">Audit and compliances</h3>
                 <p className="mt-4 text-base text-gray-600">Ensure that your IPO process complies with all regulatory requirements.</p>
               </div>
 
@@ -246,7 +245,7 @@ export default function Home() {
                 <p className="mt-4 text-base text-gray-600">Receive post-IPO support to maintain your company’s success on the public market.</p>
               </div>
 
-              {/* New Service */}
+              {/* Financial modeling & valuation */}
               <div>
                 <div className="relative mx-auto flex items-center justify-center">
                   <svg className="text-pink-100" width="64" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -256,21 +255,21 @@ export default function Home() {
                     <path d="M12 8v4l3 3M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">New Service</h3>
+                <h3 className="mt-8 text-lg font-semibold text-black">Financial modeling & valuation</h3>
                 <p className="mt-4 text-base text-gray-600">Explore our newly added service to further support your IPO journey.</p>
               </div>
             </div>
-            <div className="flex justify-center mt-12">
+            {/* <div className="flex justify-center mt-12">
               <a href="/services" className="bg-slate-900 text-white px-6 py-3 rounded-lg font-bold shadow-md hover:bg-slate-600 transition duration-300">
                 Learn More Services
               </a>
-            </div>
+            </div> */}
           </div>
         </section>
 
 
         {/* Section 3: FAQs */}
-        <FAQ />
+        <IPOCLUBFAQ />
 
         {/* Section 4: Ecosystem */}
         <section className="py-16 relative overflow-hidden">
@@ -286,34 +285,44 @@ export default function Home() {
             </h2>
 
             {/* Image and Content Row */}
-            <div className="relative flex flex-col md:flex-row justify-between items-center md:items-start gap-8 md:gap-12 z-10">
+            <div className="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 z-10">
+
               {/* Image on the Left */}
-              <div className="md:w-1/2 flex justify-center">
+              <div className="md:w-1/2 flex justify-center md:justify-start">
                 <Image
-                  src="/assets/images/ecosystem2.webp"
-                  alt="IPO Ecosystem"
-                  width={500}
-                  height={500}
+                  src="/assets/images/ecosystem3.png"
+                  alt="Ecosystem"
+                  width={800}
+                  height={800}
                   className="max-w-full h-auto rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
                 />
               </div>
 
               {/* Content on the Right */}
-              <div className="md:w-1/3 text-left">
-                <h3 className="text-2xl font-bold text-blue-700 mb-6">Discover Our Ecosystem</h3>
+              <div className="md:w-1/2 text-left">
+                <h3 className="text-2xl font-bold text-blue-700 mb-6">Our Innovation Ecosystem</h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  The IPO Club is an exclusive network that brings together industry experts, merchant bankers, investors, auditors, and legal professionals. We streamline the complexities of IPOs by connecting you with the right resources.
+                  Societe Generale fosters a robust ecosystem that drives open innovation, collaboration with startups, and partnerships with leading institutions. Explore our initiatives below:
                 </p>
-                <ul className="list-disc pl-5 text-gray-700 mb-4">
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Merchant Bankers:</span> Assisting you in navigating through the financial landscape.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Legal Counsels:</span> Ensuring all legal requirements are met.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Industry Experts:</span> Offering deep insights and guidance.</li>
-                  <li><span className="font-semibold text-blue-700">Investors:</span> Connecting you with potential investors.</li>
+                <ul className="list-disc pl-5 text-gray-700 mb-6">
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Open Innovation:</span> Promoting new ideas and solutions.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Hosted Startups:</span> Supporting early-stage startups.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Incubators:</span> Nurturing innovation through incubation programs.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Partner Startups:</span> Collaborating with strategic startup partners.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Strategic Partnerships:</span> Fostering long-term business relationships.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Funding:</span> Securing financial resources for innovation.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Business Partnerships:</span> Building collaborative business networks.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Chairs and Universities:</span> Partnering with academic institutions for research and development.</li>
+                  <li className="mb-2"><span className="font-semibold text-blue-700">Innovative Third-Party Environments:</span> Engaging with cutting-edge external environments.</li>
                 </ul>
-                <a href="#" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300">
-                  Learn More
-                </a>
+                {/* Align the button with the content */}
+                {/* <div className="mt-4">
+                  <a href="/ecosystem" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300">
+                    Learn More
+                  </a>
+                </div> */}
               </div>
+
             </div>
           </div>
         </section>
@@ -363,13 +372,11 @@ export default function Home() {
                 <p className="text-gray-600 text-center mt-2">Our team helped an SME in consumer goods secure a successful public launch.</p>
               </div>
             </div>
-
-
-            <div className="text-center mt-12">
+            {/* <div className="text-center mt-12">
               <a href="/case-studies" className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-slate-700 transition duration-300">
                 Read Our Case Studies
               </a>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -377,59 +384,36 @@ export default function Home() {
         <section className="py-16 bg-base-100">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
-              Tired of managing Stripe invoices?
+              Having an Expert Involved in an IPO is Crucial
             </h2>
 
+            <p className="text-center text-lg mb-8 md:mb-12">
+              Having an expert involved in the process of an Initial Public Offering (IPO) can be crucial for its success. Here are the advantages of involving an expert and the potential disadvantages of proceeding without one:
+            </p>
+
             <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
-              <div className="bg-error/20 text-error p-8 md:p-12 rounded-lg w-full ">
-                <h3 className="font-bold text-lg mb-4">
-                  Stripe invoices without ZenVoice
-                </h3>
-
-                <ul className="list-disc list-inside space-y-1.5 ">
-                  {/* Pains the user is experiencing by not using your product */}
-                  {[
-                    "Manually create invoices",
-                    "Or pay up to $2 per invoice",
-                    "Waste hours in customer support",
-                    "Can’t update details once sent (VAT, Tax ID)",
-                    "Can't make invoices for previous purchases",
-                  ].map((item, index) => (
-                    <li key={index} className="flex gap-2 items-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                        className="w-4 h-4 shrink-0 opacity-75"
-                      >
-                        <path d="M5.28 4.22a.75.75 0 0 0-1.06 1.06L6.94 8l-2.72 2.72a.75.75 0 1 0 1.06 1.06L8 9.06l2.72 2.72a.75.75 0 1 0 1.06-1.06L9.06 8l2.72-2.72a.75.75 0 0 0-1.06-1.06L8 6.94 5.28 4.22Z" />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
+              {/* Advantages of Having an Expert for an IPO */}
               <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
                 <h3 className="font-bold text-lg mb-4">
-                  Stripe invoices + ZenVoice
+                  Advantages of Having an Expert for an IPO
                 </h3>
 
-                <ul className="list-disc list-inside space-y-1.5 ">
-                  {/* Features of your product fixing the pain (try to match each with/withot lines) */}
+                <ul className="list-disc list-inside space-y-2">
                   {[
-                    "Self-serve invoices",
-                    `One-time payment for unlimited invoices`,
-                    "No more customer support",
-                    "Editable invoices to stay compliant",
-                    "Invoices for any payment, even past ones",
+                    "Strategic Guidance and Structuring: Experts bring a wealth of knowledge in structuring the IPO, including pricing, timing, and the selection of underwriters. They help companies choose the right market positioning and investor messaging.",
+                    "Regulatory Compliance: Navigating the regulatory landscape is complex, and experts ensure that all legal, compliance, and financial disclosure requirements are met, reducing the risk of regulatory issues.",
+                    "Valuation Accuracy: Experts assist in achieving an optimal valuation, balancing the needs of the company and investor expectations. They use sophisticated methods to arrive at a valuation that maximizes capital raised while maintaining investor confidence.",
+                    "Investor Confidence: Having credible advisors boosts investor confidence, as their involvement signals that the IPO has been thoroughly vetted and structured according to industry best practices.",
+                    "Efficient Roadshows and Marketing: Experts organize and execute effective roadshows, managing investor relations, marketing strategies, and media coverage to ensure broad market visibility.",
+                    "Crisis Management: Experts are equipped to handle unexpected challenges during the IPO process, such as market volatility or regulatory scrutiny, with minimal disruption.",
+                    "Time and Cost Efficiency: An experienced advisor streamlines the IPO process, reducing time and potential costs associated with errors, delays, or regulatory penalties.",
                   ].map((item, index) => (
-                    <li key={index} className="flex gap-2 items-center">
+                    <li key={index} className="flex gap-2 items-start">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 16 16"
                         fill="currentColor"
-                        className="w-4 h-4 shrink-0 opacity-75"
+                        className="w-4 h-4 shrink-0 opacity-75 mt-1"
                       >
                         <path
                           fillRule="evenodd"
@@ -437,19 +421,58 @@ export default function Home() {
                           clipRule="evenodd"
                         />
                       </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
+              {/* Disadvantages of Not Having an Expert for an IPO */}
+              <div className="bg-error/20 text-error p-8 md:p-12 rounded-lg w-full">
+                <h3 className="font-bold text-lg mb-4">
+                  Disadvantages of Not Having an Expert for an IPO
+                </h3>
+
+                <ul className="list-disc list-inside space-y-2">
+                  {[
+                    "Increased Risk of Regulatory Non-Compliance: Without an expert, companies may fail to meet complex regulatory requirements, leading to delays, penalties, or even legal challenges.",
+                    "Suboptimal Valuation: Companies risk mispricing their shares without expert guidance, which can lead to under-valuation (losing capital) or over-valuation (creating unrealistic market expectations).",
+                    "Lack of Market Insight: Without expert insights, companies might misjudge market conditions, timing, or investor sentiment, negatively affecting the IPO’s success.",
+                    "Ineffective Marketing and Investor Relations: Poorly planned roadshows and investor communications can result in low investor interest and reduced capital raised.",
+                    "Higher Costs and Delays: Inefficiencies in the IPO process can lead to increased costs, wasted resources, and delays, adversely affecting the company’s plans.",
+                    "Reputational Risk: An unsuccessful IPO due to poor execution can harm the company’s reputation, making future capital raises more difficult.",
+                    "Lack of Crisis Management: In the absence of experts, companies are often ill-equipped to handle crises, such as negative market reactions, regulatory issues, or PR challenges.",
+                    "Missed Strategic Opportunities: Without experienced advisors, companies may miss out on strategic opportunities to optimize their capital  or gain competitive advantages.",
+                  ].map((item, index) => (
+                    <li key={index} className="flex gap-2 items-start">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 16 16"
+                        fill="currentColor"
+                        className="w-4 h-4 shrink-0 opacity-75 mt-1"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
+
+            <p className="text-center text-lg mt-8 md:mt-12">
+              Overall, having an expert on board significantly improves the chances of a successful IPO, providing critical guidance, minimizing risks, and maximizing value.
+            </p>
           </div>
         </section>
 
 
         {/* Section 7: Our Expert Team */}
-        <section className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100">
+        {/* <section className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100">
           <h2 className="text-3xl font-bold text-center mb-8 text-indigo-900">
             Meet the Experts Behind Your IPO Success
           </h2>
@@ -505,7 +528,7 @@ export default function Home() {
               Meet the Team
             </a>
           </div>
-        </section>
+        </section> */}
 
         {/* Section 8: Join the IPO Club Today */}
         <section className="py-16 bg-neutral text-neutral-content">

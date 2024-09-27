@@ -3,7 +3,7 @@ import { ConfigProps } from "./types/config";
 
 const config = {
   appName: "IPO CLUB",
-  appDescription: "IPO CLUB - Your Gateway to Going Public",
+  appDescription: "IPO CLUB - Your Gateway to capital",
   seoName: "IPO CLUB: The Ultimate Platform for IPOs",
   seoDescription: "Discover the latest IPO news, analysis, and insights. Join the IPO Club community and stay ahead of the curve in the world of public offerings.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)

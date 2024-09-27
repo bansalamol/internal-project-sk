@@ -11,8 +11,8 @@ import React from 'react';
 
 
 const links: { href: string; label: string }[] = [
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
+  // { href: "/about", label: "About" },
+  // { href: "/services", label: "Services" },
 ];
 
 const Header = () => {
@@ -31,13 +31,13 @@ const Header = () => {
   // CTA component to open the modal
   const cta: JSX.Element = (
     <div className="flex space-x-4">
-      <Link href="/register">
+      {/* <Link href="/register">
         <button
           className="btn bg-slate-900 text-white hover:bg-slate-700"
         >
           Join {config.appName}
         </button>
-      </Link>
+      </Link> */}
     </div>
   );
 
