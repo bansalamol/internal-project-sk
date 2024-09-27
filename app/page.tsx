@@ -187,7 +187,7 @@ export default function Home() {
                 <p className="mt-4 text-base text-gray-600">Assess your company’s IPO potential and identify key areas of improvement.</p>
               </div>
 
-              {/* Financial and Legal Advisory */}
+              {/* Financial &amp; Legal Advisory */}
               <div>
                 <div className="relative mx-auto flex items-center justify-center">
                   <svg className="text-green-100" width="62" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -198,7 +198,7 @@ export default function Home() {
                     <path d="M12.786 8.5L10.643 11.5h3l-2.143 3" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">Financial and Legal Advisory</h3>
+                <h3 className="mt-8 text-lg font-semibold text-black">Financial &amp; Legal Advisory</h3>
                 <p className="mt-4 text-base text-gray-600">Collaborate with top-tier advisors to streamline all financial and legal processes.</p>
               </div>
 
@@ -216,7 +216,7 @@ export default function Home() {
                 <p className="mt-4 text-base text-gray-600">Tap into our extensive network of investors to generate demand and ensure a successful offering.</p>
               </div>
 
-              {/* Audit and compliances */}
+              {/* Audit &amp; Compliances */}
               <div>
                 <div className="relative mx-auto flex items-center justify-center">
                   <svg className="text-yellow-100" width="66" height="68" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -226,7 +226,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">Audit and compliances</h3>
+                <h3 className="mt-8 text-lg font-semibold text-black">Audit &amp; Compliances</h3>
                 <p className="mt-4 text-base text-gray-600">Ensure that your IPO process complies with all regulatory requirements.</p>
               </div>
 
@@ -245,7 +245,7 @@ export default function Home() {
                 <p className="mt-4 text-base text-gray-600">Receive post-IPO support to maintain your company’s success on the public market.</p>
               </div>
 
-              {/* Financial modeling & valuation */}
+              {/* Financial Modeling &amp; Valuation */}
               <div>
                 <div className="relative mx-auto flex items-center justify-center">
                   <svg className="text-pink-100" width="64" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -255,7 +255,7 @@ export default function Home() {
                     <path d="M12 8v4l3 3M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z" />
                   </svg>
                 </div>
-                <h3 className="mt-8 text-lg font-semibold text-black">Financial modeling & valuation</h3>
+                <h3 className="mt-8 text-lg font-semibold text-black">Financial Modeling &amp; Valuation</h3>
                 <p className="mt-4 text-base text-gray-600">Explore our newly added service to further support your IPO journey.</p>
               </div>
             </div>
