@@ -49,7 +49,7 @@ const Header = () => {
             <Image
               src={logo}
               alt={`${config.appName} logo`}
-              className="w-8"
+              className="w-12"
               placeholder="blur"
               priority={true}
               width={32}
