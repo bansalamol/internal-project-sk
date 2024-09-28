@@ -255,7 +255,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="mt-8 text-lg font-semibold text-black">Financial Modeling &amp; Valuation</h3>
-                <p className="mt-4 text-base text-gray-600">Maximize Your Valuation with a Precise Business Plan.</p>
+                <p className="mt-4 text-base text-gray-600">Maximize Your Valuation with a robust Business model.</p>
               </div>
             </div>
             {/* <div className="flex justify-center mt-12">
@@ -280,7 +280,7 @@ export default function Home() {
             </div>
 
             <h2 className="relative text-center uppercase font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
-              IPO Ecosystem
+              IPO CLUB Ecosystem
             </h2>
 
             {/* Image and Content Row */}
@@ -299,21 +299,11 @@ export default function Home() {
 
               {/* Content on the Right */}
               <div className="md:w-1/2 text-left">
-                <h3 className="text-2xl font-bold text-blue-700 mb-6">Our Innovation Ecosystem</h3>
+                <h3 className="text-2xl font-bold text-blue-700 mb-6">Our Deep Rooted Ecosystem</h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  Societe Generale fosters a robust ecosystem that drives open innovation, collaboration with startups, and partnerships with leading institutions. Explore our initiatives below:
+                IPO Club Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
                 </p>
-                <ul className="list-disc pl-5 text-gray-700 mb-6">
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Open Innovation:</span> Promoting new ideas and solutions.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Hosted Startups:</span> Supporting early-stage startups.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Incubators:</span> Nurturing innovation through incubation programs.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Partner Startups:</span> Collaborating with strategic startup partners.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Strategic Partnerships:</span> Fostering long-term business relationships.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Funding:</span> Securing financial resources for innovation.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Business Partnerships:</span> Building collaborative business networks.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Chairs and Universities:</span> Partnering with academic institutions for research and development.</li>
-                  <li className="mb-2"><span className="font-semibold text-blue-700">Innovative Third-Party Environments:</span> Engaging with cutting-edge external environments.</li>
-                </ul>
+                
                 {/* Align the button with the content */}
                 {/* <div className="mt-4">
                   <a href="/ecosystem" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300">
@@ -396,9 +386,9 @@ export default function Home() {
                 
                 <ul className="list-disc list-inside space-y-2">
                   {[
-                    "Strategic Guidance and Structuring: Experts bring a wealth of knowledge in structuring the IPO, including pricing, timing, and the selection of underwriters. They help companies choose the right market positioning and investor messaging.",
-                    "Regulatory Compliance: Navigating the regulatory landscape is complex, and experts ensure that all legal, compliance, and financial disclosure requirements are met, reducing the risk of regulatory issues.",
-                    "Valuation Accuracy: Experts assist in achieving an optimal valuation, balancing the needs of the company and investor expectations. They use sophisticated methods to arrive at a valuation that maximizes capital raised while maintaining investor confidence.",
+                    "Strategic Guidance and Structuring",
+                    "Regulatory Compliance",
+                    "Valuation Accuracy",
                    
                   ].map((item, index) => (
                     <li key={index} className="flex gap-2 items-start">
@@ -425,10 +415,9 @@ export default function Home() {
                
                 <ul className="list-disc list-inside space-y-2">
                   {[
-                     "Investor Confidence: Having credible advisors boosts investor confidence, as their involvement signals that the IPO has been thoroughly vetted and structured according to industry best practices.",
-                     "Efficient Roadshows and Marketing: Experts organize and execute effective roadshows, managing investor relations, marketing strategies, and media coverage to ensure broad market visibility.",
-                     "Crisis Management: Experts are equipped to handle unexpected challenges during the IPO process, such as market volatility or regulatory scrutiny, with minimal disruption.",
-                     "Time and Cost Efficiency: An experienced advisor streamlines the IPO process, reducing time and potential costs associated with errors, delays, or regulatory penalties.",
+                     "Investor Confidence",
+                     "Efficient Roadshows and Marketing",
+                     "Time and Cost Efficiency",
                   ].map((item, index) => (
                     <li key={index} className="flex gap-2 items-start">
                       <svg

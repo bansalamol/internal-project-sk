@@ -37,7 +37,7 @@ const Register = () => {
 
             if (response.ok) {
                 // Store modal message and state in session storage
-                sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO-club. Our team will get in touch with you shortly to provide more details and answer any questions you may have.');
+                sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO CLUB! Our professional will get in touch with you shortly to provide more details and answer any questions you may have.');
                 sessionStorage.setItem('isError', 'false');
                 form.reset();
 
@@ -165,6 +165,20 @@ const Register = () => {
                                 <option value="Investment Advisor">Investment Advisor</option>*/}
                             </select>
                         </div>
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg h-5 w-5 p-1"
+                                checked
+                            />
+                            <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-900">
+                                I accept the <a href="/tos" className="text-blue-500 hover:underline">terms and conditions</a>
+                            </label>
+                        </div>
+
+
                         <button
                             type="submit"
                             className="btn bg-slate-900 text-white hover:bg-slate-700"
