@@ -46,7 +46,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-black text-sm text-base-content/60 mb-4 md:mb-0">
-            Copyright © {new Date().getFullYear()} - All rights reserved
+            Copyright © {new Date().getFullYear()} IPO CLUB. All rights reserved
           </p>
           <div className="flex gap-4">
             {/*<a href="https://twitter.com" target="_blank" className="text-base-content/60 transition-transform transform hover:scale-110">
