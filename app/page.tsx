@@ -289,7 +289,7 @@ export default function Home() {
               {/* Image on the Left */}
               <div className="md:w-1/2 flex justify-center md:justify-start">
                 <Image
-                  src="/assets/images/ecosystem3.png"
+                  src="/assets/images/ecosystem6.png"
                   alt="Ecosystem"
                   width={800}
                   height={800}
