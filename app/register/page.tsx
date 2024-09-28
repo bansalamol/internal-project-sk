@@ -23,6 +23,8 @@ const Register = () => {
         const mobile = formData.get("mobile") as string;
         const email = formData.get("email") as string;
         const role = formData.get("role") as string;
+        const company = formData.get("company") as string;
+        const address = formData.get("address") as string;
 
         try {
             const response = await fetch("/api/register", {
@@ -30,7 +32,7 @@ const Register = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, mobile, email, role }),
+                body: JSON.stringify({ name, mobile, email, role, company, address }),
             });
 
             if (response.ok) {
@@ -119,6 +121,28 @@ const Register = () => {
                             />
                         </div>
                         <div>
+                            <label htmlFor="company" className="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                                placeholder="Company Name"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                                placeholder="Enter your address"
+                                required
+                            />
+                        </div>
+                        <div>
                             <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900">Register as</label>
                             <select
                                 id="role"
@@ -128,7 +152,7 @@ const Register = () => {
                             >
                                 <option value="">Select role</option>
                                 <option value="Company planning for an IPO">Company planning for an IPO</option>
-                                <option value="Institutional Investor">Institutional Investor</option>
+                               {/*} <option value="Institutional Investor">Institutional Investor</option>
                                 <option value="CA/CS/MBA/Practising Professionals">CA/CS/MBA/Practising Professionals</option>
                                 <option value="Merchant Banker">Merchant Banker</option>
                                 <option value="Individual Investor">Individual Investor</option>
@@ -138,7 +162,7 @@ const Register = () => {
                                 <option value="FPI">FPI</option>
                                 <option value="HNI Investor">HNI Investor</option>
                                 <option value="RTA">RTA</option>
-                                <option value="Investment Advisor">Investment Advisor</option>
+                                <option value="Investment Advisor">Investment Advisor</option>*/}
                             </select>
                         </div>
                         <button

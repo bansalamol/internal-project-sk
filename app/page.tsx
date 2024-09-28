@@ -3,11 +3,11 @@
 import { Suspense, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TestimonialsAvatars from "@/components/TestimonialsAvatars";
+//import TestimonialsAvatars from "@/components/TestimonialsAvatars";
 import ButtonGradient from "@/components/ButtonGradient";
 import Image from "next/image";
 import MessageModal from "@/components/MessageModal";
-import IPOCLUBFAQ from "@/components/IPOCLUBFAQ";
+//import IPOCLUBFAQ from "@/components/IPOCLUBFAQ";
 
 
 
@@ -68,7 +68,7 @@ export default function Home() {
               </div>
               <div className="mt-12 max-w-3xl">
                 <p className="text-xl text-white">
-                  From Strategy to Success, Your One-Stop Destination for IPOs
+                  From Strategy to Success, Your One-Stop Destination for an IPOs
                 </p>
               </div>
               <div className="mt-6 flex justify-center space-x-4">
@@ -76,18 +76,16 @@ export default function Home() {
                   <ButtonGradient />
                 </a>
               </div>
-              <div className="mt-10">
-                <TestimonialsAvatars priority={true} />
-              </div>
             </div>
           </div>
         </section>
 
 
         {/* Section 1: Why Choose IPO Club? */}
-        <section className="py-16 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-200">
+        <section className="py-16 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-200" id="services">
           <h2 className="text-4xl font-bold text-center mb-8">
-            Transform Your IPO Journey with Comprehensive Support
+            {/*Transform Your IPO Journey with Comprehensive Support*/}
+            WHAT WE DO
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
             IPO Club offers an end-to-end ecosystem tailored to help businesses seamlessly transition into the public market. From preparation to execution, our expert team ensures your IPO is strategic, successful, and efficient.
@@ -163,13 +161,14 @@ export default function Home() {
         </section>
 
         {/* Section 2: Our Services */}
-        <section className="py-16 bg-green-50/60" id="services">
+        <section className="py-16 bg-green-50/60" id="about">
           <div className="mx-auto max-w-5xl px-8 py-16">
             <div className="mb-20 flex w-full flex-col text-center">
-              <p className="mb-8 font-bold text-xl">A Full Suite of Services for Every Step of Your IPO</p>
-              <h2 className="text-3xl font-bold tracking-tight lg:text-4xl">
-                We specialize in a comprehensive range of professional services designed to support your IPO at every stage.
+              <h2 className="text-4xl font-bold text-center mb-8">
+                HOW WE DO
+                {/*We specialize in a comprehensive range of professional services designed to support your IPO at every stage.*/}
               </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">A Full Suite of Services for Every Step of Your IPO</p>
             </div>
             <div className="grid grid-cols-1 gap-12 text-center sm:grid-cols-2 md:grid-cols-3 lg:gap-y-16">
 
@@ -256,7 +255,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <h3 className="mt-8 text-lg font-semibold text-black">Financial Modeling &amp; Valuation</h3>
-                <p className="mt-4 text-base text-gray-600">Explore our newly added service to further support your IPO journey.</p>
+                <p className="mt-4 text-base text-gray-600">Maximize Your Valuation with a Precise Business Plan.</p>
               </div>
             </div>
             {/* <div className="flex justify-center mt-12">
@@ -269,10 +268,10 @@ export default function Home() {
 
 
         {/* Section 3: FAQs */}
-        <IPOCLUBFAQ />
+        {/* <IPOCLUBFAQ /> */}
 
         {/* Section 4: Ecosystem */}
-        <section className="py-16 relative overflow-hidden">
+        <section className="py-16 relative overflow-hidden  bg-gradient-to-r from-cyan-100 to-blue-50 ">
           <div className="max-w-6xl mx-auto px-6">
             {/* Background Shape */}
             <div className="absolute inset-0 opacity-30">
@@ -280,8 +279,8 @@ export default function Home() {
               <div className="w-80 h-80 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full blur-2xl opacity-30 transform scale-110 translate-x-1/2 translate-y-1/3"></div>
             </div>
 
-            <h2 className="relative text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
-              Ecosystem
+            <h2 className="relative text-center uppercase font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
+              IPO Ecosystem
             </h2>
 
             {/* Image and Content Row */}
@@ -328,7 +327,7 @@ export default function Home() {
         </section>
 
         {/* Section 5: Success Stories */}
-        <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50">
+       {/* <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
               Companies We&apos;ve Helped Go Public
@@ -372,19 +371,19 @@ export default function Home() {
                 <p className="text-gray-600 text-center mt-2">Our team helped an SME in consumer goods secure a successful public launch.</p>
               </div>
             </div>
-            {/* <div className="text-center mt-12">
+             <div className="text-center mt-12">
               <a href="/case-studies" className="bg-slate-900 text-white px-8 py-4 rounded-lg font-bold shadow-lg hover:bg-slate-700 transition duration-300">
                 Read Our Case Studies
               </a>
-            </div> */}
+            </div> 
           </div>
-        </section>
+        </section>*/}
 
         {/* Section 6: Knowledge */}
         <section className="py-16 bg-base-100">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
-              Having an Expert Involved in an IPO is Crucial
+              Why Us
             </h2>
 
             <p className="text-center text-lg mb-8 md:mb-12">
@@ -394,19 +393,13 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
               {/* Advantages of Having an Expert for an IPO */}
               <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
-                <h3 className="font-bold text-lg mb-4">
-                  Advantages of Having an Expert for an IPO
-                </h3>
-
+                
                 <ul className="list-disc list-inside space-y-2">
                   {[
                     "Strategic Guidance and Structuring: Experts bring a wealth of knowledge in structuring the IPO, including pricing, timing, and the selection of underwriters. They help companies choose the right market positioning and investor messaging.",
                     "Regulatory Compliance: Navigating the regulatory landscape is complex, and experts ensure that all legal, compliance, and financial disclosure requirements are met, reducing the risk of regulatory issues.",
                     "Valuation Accuracy: Experts assist in achieving an optimal valuation, balancing the needs of the company and investor expectations. They use sophisticated methods to arrive at a valuation that maximizes capital raised while maintaining investor confidence.",
-                    "Investor Confidence: Having credible advisors boosts investor confidence, as their involvement signals that the IPO has been thoroughly vetted and structured according to industry best practices.",
-                    "Efficient Roadshows and Marketing: Experts organize and execute effective roadshows, managing investor relations, marketing strategies, and media coverage to ensure broad market visibility.",
-                    "Crisis Management: Experts are equipped to handle unexpected challenges during the IPO process, such as market volatility or regulatory scrutiny, with minimal disruption.",
-                    "Time and Cost Efficiency: An experienced advisor streamlines the IPO process, reducing time and potential costs associated with errors, delays, or regulatory penalties.",
+                   
                   ].map((item, index) => (
                     <li key={index} className="flex gap-2 items-start">
                       <svg
@@ -428,21 +421,14 @@ export default function Home() {
               </div>
 
               {/* Disadvantages of Not Having an Expert for an IPO */}
-              <div className="bg-error/20 text-error p-8 md:p-12 rounded-lg w-full">
-                <h3 className="font-bold text-lg mb-4">
-                  Disadvantages of Not Having an Expert for an IPO
-                </h3>
-
+              <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
+               
                 <ul className="list-disc list-inside space-y-2">
                   {[
-                    "Increased Risk of Regulatory Non-Compliance: Without an expert, companies may fail to meet complex regulatory requirements, leading to delays, penalties, or even legal challenges.",
-                    "Suboptimal Valuation: Companies risk mispricing their shares without expert guidance, which can lead to under-valuation (losing capital) or over-valuation (creating unrealistic market expectations).",
-                    "Lack of Market Insight: Without expert insights, companies might misjudge market conditions, timing, or investor sentiment, negatively affecting the IPO’s success.",
-                    "Ineffective Marketing and Investor Relations: Poorly planned roadshows and investor communications can result in low investor interest and reduced capital raised.",
-                    "Higher Costs and Delays: Inefficiencies in the IPO process can lead to increased costs, wasted resources, and delays, adversely affecting the company’s plans.",
-                    "Reputational Risk: An unsuccessful IPO due to poor execution can harm the company’s reputation, making future capital raises more difficult.",
-                    "Lack of Crisis Management: In the absence of experts, companies are often ill-equipped to handle crises, such as negative market reactions, regulatory issues, or PR challenges.",
-                    "Missed Strategic Opportunities: Without experienced advisors, companies may miss out on strategic opportunities to optimize their capital  or gain competitive advantages.",
+                     "Investor Confidence: Having credible advisors boosts investor confidence, as their involvement signals that the IPO has been thoroughly vetted and structured according to industry best practices.",
+                     "Efficient Roadshows and Marketing: Experts organize and execute effective roadshows, managing investor relations, marketing strategies, and media coverage to ensure broad market visibility.",
+                     "Crisis Management: Experts are equipped to handle unexpected challenges during the IPO process, such as market volatility or regulatory scrutiny, with minimal disruption.",
+                     "Time and Cost Efficiency: An experienced advisor streamlines the IPO process, reducing time and potential costs associated with errors, delays, or regulatory penalties.",
                   ].map((item, index) => (
                     <li key={index} className="flex gap-2 items-start">
                       <svg

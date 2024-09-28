@@ -8,11 +8,12 @@ import Image from "next/image";
 import logo from "@/app/icon.png";
 import config from "@/config";
 import React from 'react';
-
+import ButtonGradient from "@/components/ButtonGradient";
 
 const links: { href: string; label: string }[] = [
-  // { href: "/about", label: "About" },
-  // { href: "/services", label: "Services" },
+   { href: "#services", label: "Services" },
+   { href: "#about", label: "About" },
+   { href: "#contact", label: "Contact" },
 ];
 
 const Header = () => {
@@ -31,13 +32,9 @@ const Header = () => {
   // CTA component to open the modal
   const cta: JSX.Element = (
     <div className="flex space-x-4">
-      {/* <Link href="/register">
-        <button
-          className="btn bg-slate-900 text-white hover:bg-slate-700"
-        >
-          Join {config.appName}
-        </button>
-      </Link> */}
+      { <Link href="/register">
+        <ButtonGradient />
+      </Link> }
     </div>
   );
 
