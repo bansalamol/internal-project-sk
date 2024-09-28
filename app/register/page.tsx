@@ -132,7 +132,7 @@ const Register = () => {
                             />
                         </div>
                         <div>
-                            <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
+                            <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900">Address</label>
                             <input
                                 type="text"
                                 id="address"

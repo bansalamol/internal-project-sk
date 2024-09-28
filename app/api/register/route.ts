@@ -2,7 +2,7 @@ import { createClient } from "@/libs/supabase/client";
 
 export async function POST(request: Request) {
     const supabase = createClient();
-    const { name, mobile, email, role } = await request.json();
+    const { name, mobile, email, role, company, address } = await request.json();
 
     try {
         // Check for duplicate mobile number
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
         // Insert new lead if no duplicates found
         const { error: insertError } = await supabase
             .from("leads")
-            .insert([{ name, mobile, email, role }]);
+            .insert([{ name, mobile, email, role, company, address }]);
 
         // Handle insert error
         if (insertError) {
