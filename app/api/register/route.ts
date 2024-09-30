@@ -11,16 +11,12 @@ export async function POST(request: Request) {
             .select("mobile")
             .eq("mobile", mobile);
 
-        console.log('Mobile Check Data:', mobileCheckData); // Log the mobile data to check response
-        
         // Check for duplicate email
         const { data: emailCheckData, error: emailCheckError } = await supabase
             .from("leads")
             .select("email")
             .eq("email", email);
 
-        console.log('Email Check Data:', emailCheckData); // Log the email data to check response
-        
         // Handle mobile number check error
         if (mobileCheckError) {
             return new Response(JSON.stringify({ message: "Failed to check mobile number." }), {
@@ -56,7 +52,19 @@ export async function POST(request: Request) {
 
         // Handle insert error
         if (insertError) {
-            console.log('Insert Error:', insertError); // Log the insert error
+            console.log('Insert Error:', insertError);
+            if (insertError.code === '23505') { // PostgreSQL unique violation error code
+                if (insertError.message.includes('email')) {
+                    return new Response(JSON.stringify({ message: "Email already registered." }), {
+                        status: 400,
+                    });
+                } else if (insertError.message.includes('mobile')) {
+                    return new Response(JSON.stringify({ message: "Mobile number already registered." }), {
+                        status: 400,
+                    });
+                }
+            }
+
             return new Response(JSON.stringify({ message: "Registration failed. Please try again." }), {
                 status: 400,
             });
