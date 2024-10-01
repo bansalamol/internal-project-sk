@@ -1,4 +1,7 @@
 import { createClient } from "@/libs/supabase/client";
+import Mailgun from 'mailgun.js';
+const formData = require('form-data');
+
 
 export async function POST(request: Request) {
     const supabase = createClient();
@@ -70,6 +73,10 @@ export async function POST(request: Request) {
             });
         }
 
+        // Send welcome emails after successful insertion
+        await sendWelcomeEmails(name, email, { name, email, role, company, address });
+
+
         // Return success response
         return new Response(JSON.stringify({ message: "Registration successful!" }), {
             status: 200,
@@ -77,8 +84,46 @@ export async function POST(request: Request) {
 
     } catch (error) {
         console.log('General Error:', error); // Log the general error
-        return new Response(JSON.stringify({ message: "Registration failed. Please try again." }), {
+        return new Response(JSON.stringify({ message: "Registration Sucessful. Email not sent." }), {
             status: 500,
         });
     }
+}
+// Helper function to send emails via Mailgun
+async function sendWelcomeEmails(memberName: string, memberEmail: string, memberDetails: any) {
+    const mailgun = new Mailgun(formData);
+    const mg = mailgun.client({
+        username: 'api',
+        key: process.env.MAILGUN_API_KEY || '1b5736a5-771eb74d',
+    });
+
+    // Email to new member
+    const memberMessage = {
+        from: 'IPO Club Team <info@ipoclub.in>',
+        to: memberEmail,
+        subject: 'Welcome to the IPO Club!',
+        text: `Hi ${memberName},\n\nWelcome to the IPO Club! We’re excited to have you with us.\n\nBest,\nIPO Club Team`,
+    };
+
+    // Email to IPO Club team
+    const teamMessage = {
+        from: 'IPO Club Team <info@ipoclub.in>',
+        to: 'info@ipoclub.in',
+        cc: 'sachin@ipoclub.in',
+        subject: 'New IPO Club Member Registration',
+        text: `Hi Team,\n\nI hope this message finds you well. Below are the registration details for our new member in the IPO Club:\n\n
+        Member Name: ${memberDetails.name}\n
+        Email Address: ${memberDetails.email}\n
+        Registration Date: ${new Date().toLocaleDateString()}\n
+        Role: ${memberDetails.role}\n
+        Company: ${memberDetails.company}\n
+        Address: ${memberDetails.address}\n
+        \nPlease update our records accordingly and ensure they receive all necessary welcome materials.\n\nBest,\nIPO Club Team`,
+    };
+
+    // Send both emails
+    await Promise.all([
+        mg.messages.create('ipoclub.in', memberMessage),
+        mg.messages.create('ipoclub.in', teamMessage),
+    ]);
 }

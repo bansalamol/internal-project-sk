@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ButtonGradient from "@/components/ButtonGradient";
 import Image from "next/image";
 import MessageModal from "@/components/MessageModal";
+import OneTimeModal from "@/components/OneTimeModal";
 //import IPOCLUBFAQ from "@/components/IPOCLUBFAQ";
 
 
@@ -279,7 +280,7 @@ export default function Home() {
               <div className="w-80 h-80 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full blur-2xl opacity-30 transform scale-110 translate-x-1/2 translate-y-1/3"></div>
             </div>
 
-            <h2 className="relative text-center uppercase font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">
+            <h2 className="relative text-center uppercase font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
               IPO CLUB Ecosystem
             </h2>
 
@@ -301,9 +302,9 @@ export default function Home() {
               <div className="md:w-1/2 text-left">
                 <h3 className="text-2xl font-bold text-blue-700 mb-6">Our Deep Rooted Ecosystem</h3>
                 <p className="text-lg text-gray-600 mb-4">
-                IPO Club Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
+                  IPO Club Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
                 </p>
-                
+
                 {/* Align the button with the content */}
                 {/* <div className="mt-4">
                   <a href="/ecosystem" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300">
@@ -317,7 +318,7 @@ export default function Home() {
         </section>
 
         {/* Section 5: Success Stories */}
-       {/* <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50">
+        {/* <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
               Companies We&apos;ve Helped Go Public
@@ -367,29 +368,29 @@ export default function Home() {
               </a>
             </div> 
           </div>
-        </section>*/}
+        </section> */}
 
         {/* Section 6: Knowledge */}
-        <section className="py-16 bg-base-100">
+        <section className="py-16 bg-base-100" id="benefits">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
-              Why Us
+              Benefits
             </h2>
 
             <p className="text-center text-lg mb-8 md:mb-12">
-              Having an expert involved in the process of an Initial Public Offering (IPO) can be crucial for its success. Here are the advantages of involving an expert and the potential disadvantages of proceeding without one:
+              Having an expert involved in the process of an Initial Public Offering (IPO) can be crucial for its success. Here are the advantages of involving an expert :
             </p>
 
             <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
               {/* Advantages of Having an Expert for an IPO */}
               <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
-                
+
                 <ul className="list-disc list-inside space-y-2">
                   {[
                     "Strategic Guidance and Structuring",
                     "Regulatory Compliance",
                     "Valuation Accuracy",
-                   
+
                   ].map((item, index) => (
                     <li key={index} className="flex gap-2 items-start">
                       <svg
@@ -412,12 +413,12 @@ export default function Home() {
 
               {/* Disadvantages of Not Having an Expert for an IPO */}
               <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
-               
+
                 <ul className="list-disc list-inside space-y-2">
                   {[
-                     "Investor Confidence",
-                     "Efficient Roadshows and Marketing",
-                     "Time and Cost Efficiency",
+                    "Investor Confidence",
+                    "Efficient Roadshows and Marketing",
+                    "Time and Cost Efficiency",
                   ].map((item, index) => (
                     <li key={index} className="flex gap-2 items-start">
                       <svg
@@ -525,6 +526,8 @@ export default function Home() {
             onClose={closeModal}
           />
         )}
+
+        <OneTimeModal />
       </main>
 
       <Footer />

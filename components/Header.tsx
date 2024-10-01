@@ -11,9 +11,10 @@ import React from 'react';
 import ButtonGradient from "@/components/ButtonGradient";
 
 const links: { href: string; label: string }[] = [
-   { href: "#services", label: "Services" },
-   { href: "#about", label: "About" },
-   { href: "#contact", label: "Contact" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#benefits", label: "Benefits" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const Header = () => {
@@ -32,9 +33,9 @@ const Header = () => {
   // CTA component to open the modal
   const cta: JSX.Element = (
     <div className="flex space-x-4">
-      { <Link href="/register">
+      {<Link href="/register">
         <ButtonGradient />
-      </Link> }
+      </Link>}
     </div>
   );
 
