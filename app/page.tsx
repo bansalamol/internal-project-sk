@@ -280,7 +280,7 @@ export default function Home() {
               <div className="w-80 h-80 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full blur-2xl opacity-30 transform scale-110 translate-x-1/2 translate-y-1/3"></div>
             </div>
             <h2 className="text-4xl font-bold text-center mb-8">
-              IPO CLUB Ecosystem
+              IPO CLUB ECOSYSTEM
             </h2>
 
             {/* Image and Content Row */}
@@ -369,73 +369,104 @@ export default function Home() {
           </div>
         </section> */}
 
-        {/* Section 6: Knowledge */}
+        {/* Section 6: Benefits */}
         <section className="py-16 bg-base-100" id="benefits">
           <div className="mx-auto max-w-5xl">
             <h2 className="text-4xl font-bold text-center mb-8">
-              Benefits
+              BENEFITS
             </h2>
 
             <p className="text-center text-lg mb-8 md:mb-12">
-              Having an expert involved in the process of an Initial Public Offering (IPO) can be crucial for its success. Here are the advantages of involving an expert :
+              Having an expert involved in the process of an Initial Public Offering (IPO) can be crucial for its success. Here are the advantages of involving an expert:
             </p>
 
-            <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8 md:gap-12">
-              {/* Advantages of Having an Expert for an IPO */}
-              <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
-
-                <ul className="list-disc list-inside space-y-2">
-                  {[
-                    "Strategic Guidance and Structuring",
-                    "Regulatory Compliance",
-                    "Valuation Accuracy",
-
-                  ].map((item, index) => (
-                    <li key={index} className="flex gap-2 items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                        className="w-4 h-4 shrink-0 opacity-75 mt-1"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Strategic Guidance and Structuring */}
+              <div className="p-8 bg-gradient-to-r from-green-500 via-teal-400 to-blue-500 rounded-lg shadow-lg text-white">
+                <div className="flex items-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-white mr-3"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                  <h3 className="text-xl font-semibold">Strategic Guidance and Structuring</h3>
+                </div>
+                <p>Tailored frameworks to align with your business goals and expert insights for optimal decision-making.</p>
               </div>
 
-              {/* Disadvantages of Not Having an Expert for an IPO */}
-              <div className="bg-success/20 text-success p-8 md:p-12 rounded-lg w-full">
+              {/* Regulatory Compliance */}
+              <div className="p-8 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-400 rounded-lg shadow-lg text-white">
+                <div className="flex items-center mb-4">
+                  <svg className="w-6 h-6 text-white mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" strokeLinejoin="round" strokeWidth="2" d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
+                  </svg>
+                  <h3 className="text-xl font-semibold">Regulatory Compliance</h3>
+                </div>
+                <p>Navigate complex regulations seamlessly with proactive compliance strategies.</p>
+              </div>
 
-                <ul className="list-disc list-inside space-y-2">
-                  {[
-                    "Investor Confidence",
-                    "Efficient Roadshows and Marketing",
-                    "Time and Cost Efficiency",
-                  ].map((item, index) => (
-                    <li key={index} className="flex gap-2 items-start">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
-                        className="w-4 h-4 shrink-0 opacity-75 mt-1"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              {/* Valuation Accuracy */}
+              <div className="p-8 bg-gradient-to-r from-yellow-500 via-orange-400 to-red-400 rounded-lg shadow-lg text-white">
+                <div className="flex items-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-white mr-3"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l2.09 6.26H20l-5 4.64L16.18 22 12 18.36 7.82 22 9 12.9 4 8.26h5.91z" />
+                  </svg>
+                  <h3 className="text-xl font-semibold">Valuation Accuracy</h3>
+                </div>
+                <p>Reliable assessments reflecting true market value with informed pricing strategies to attract investors.</p>
+              </div>
+
+              {/* Investor Confidence */}
+              <div className="p-8 bg-gradient-to-r from-teal-500 via-cyan-400 to-blue-400 rounded-lg shadow-lg text-white">
+                <div className="flex items-center mb-4">
+                  <svg className="w-6 h-6 text-white mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11 9a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+                    <path fill-rule="evenodd" d="M9.896 3.051a2.681 2.681 0 0 1 4.208 0c.147.186.38.282.615.255a2.681 2.681 0 0 1 2.976 2.975.681.681 0 0 0 .254.615 2.681 2.681 0 0 1 0 4.208.682.682 0 0 0-.254.615 2.681 2.681 0 0 1-2.976 2.976.681.681 0 0 0-.615.254 2.682 2.682 0 0 1-4.208 0 .681.681 0 0 0-.614-.255 2.681 2.681 0 0 1-2.976-2.975.681.681 0 0 0-.255-.615 2.681 2.681 0 0 1 0-4.208.681.681 0 0 0 .255-.615 2.681 2.681 0 0 1 2.976-2.975.681.681 0 0 0 .614-.255ZM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" clip-rule="evenodd" />
+                    <path d="M5.395 15.055 4.07 19a1 1 0 0 0 1.264 1.267l1.95-.65 1.144 1.707A1 1 0 0 0 10.2 21.1l1.12-3.18a4.641 4.641 0 0 1-2.515-1.208 4.667 4.667 0 0 1-3.411-1.656Zm7.269 2.867 1.12 3.177a1 1 0 0 0 1.773.224l1.144-1.707 1.95.65A1 1 0 0 0 19.915 19l-1.32-3.93a4.667 4.667 0 0 1-3.4 1.642 4.643 4.643 0 0 1-2.53 1.21Z" />
+                  </svg>
+
+                  <h3 className="text-xl font-semibold">Investor Confidence</h3>
+                </div>
+                <p>Build trust through transparency and clear communication to showcase robust financial health.</p>
+              </div>
+
+              {/* Efficient Roadshows and Marketing */}
+              <div className="p-8 bg-gradient-to-r from-pink-500 via-red-400 to-orange-500 rounded-lg shadow-lg text-white">
+                <div className="flex items-center mb-4">
+                  <svg
+                    className="w-8 h-8 text-white mr-3"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8h18M3 12h18m-7 4h4" />
+                  </svg>
+                  <h3 className="text-xl font-semibold">Efficient Roadshows and Marketing</h3>
+                </div>
+                <p>Streamlined presentations that maximize engagement with targeted marketing strategies.</p>
+              </div>
+
+              {/* Time and Cost Efficiency */}
+              <div className="p-8 bg-gradient-to-r from-blue-500 via-teal-500 to-green-400 rounded-lg shadow-lg text-white">
+                <div className="flex items-center mb-4">
+                  <svg className="w-6 h-6 text-white mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
+                  </svg>
+
+                  <h3 className="text-xl font-semibold">Time and Cost Efficiency</h3>
+                </div>
+                <p>Accelerated processes that save time and resources, optimizing overall productivity.</p>
               </div>
             </div>
 
@@ -444,7 +475,6 @@ export default function Home() {
             </p>
           </div>
         </section>
-
 
         {/* Section 7: Our Expert Team */}
         {/* <section className="py-16 bg-gradient-to-r from-blue-100 to-indigo-100">
