@@ -5,11 +5,11 @@ export default function OneTimeModal() {
 
     useEffect(() => {
         // Show modal only on first visit 
-        // const modalShown = sessionStorage.getItem('modalShown');
-        // if (!modalShown) {
+        const modalShown = sessionStorage.getItem('modalShown');
+        if (!modalShown) {
             setShowModal(true);
-        //     sessionStorage.setItem('modalShown', 'true');
-        // }
+            sessionStorage.setItem('modalShown', 'true');
+        }
     }, []);
 
     const handleClose = () => {
@@ -25,15 +25,14 @@ export default function OneTimeModal() {
                     DISCLAIMER
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-700 leading-tight">
-                    The general information provided on the website is taken from trusted sources and is subject to change without any notice and at the sole discretion of Atul Projects.
+                    The information provided on this website is sourced from reliable channels and may change without prior notice at the sole discretion of IPO CLUB.
                     <br /><br />
-                    Atul Projects under no circumstances guarantee or warranty that this website reflects the latest changes/amendments pertaining to the information at all times and at any time.
-                    All plans, specifications, designs, features, facilities, and services provided on the site indicate the kind of development proposed for respective projects for representational purposes.
-                    No person can copy, use, modify, display or create derivative works or databases, or transmit, exploit, sell, or distribute the same. The viewer holds the responsibility of evaluating
-                    the accuracy and/or completeness of the information provided on the website. Atul Projects on the whole holds no control over the content or the availability of Linked websites. Atul
-                    Projects shall not be liable for any aspect or information provided on Linked websites.
+                    IPO CLUB does not guarantee or warrant that the information on this website will always reflect the most up-to-date changes, especially regarding market conditions, IPO schedules, or financial details.
+                    All data, reports, analysis, and services mentioned here are for informational purposes only and are subject to revision. No individual or entity is permitted to copy, modify, display, create derivative works, transmit, exploit, sell, or distribute the content of this website without permission. It is the responsibility of the viewer to verify the accuracy and completeness of the information provided.
                     <br /><br />
-                    By proceeding to view our website, you acknowledge that you have read, understood as well as accepted these terms. Our terms may be revised time and again by Atul Projects.
+                    IPO CLUB holds no control over the content or availability of external websites linked through our platform, and we shall not be liable for any information or content on these Linked websites.
+                    <br /><br />
+                    By continuing to use our website, you confirm that you have read, understood, and agreed to these terms. IPO CLUB reserves the right to revise these terms periodically.
                 </p>
                 <div className="flex justify-center mt-3">
                     <button

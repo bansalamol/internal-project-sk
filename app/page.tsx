@@ -279,8 +279,7 @@ export default function Home() {
               <div className="w-96 h-96 bg-gradient-to-r from-blue-300 to-cyan-400 rounded-full blur-3xl opacity-50 transform scale-125 -translate-x-1/2 -translate-y-1/2"></div>
               <div className="w-80 h-80 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full blur-2xl opacity-30 transform scale-110 translate-x-1/2 translate-y-1/3"></div>
             </div>
-
-            <h2 className="relative text-center uppercase font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
+            <h2 className="text-4xl font-bold text-center mb-8">
               IPO CLUB Ecosystem
             </h2>
 
@@ -373,7 +372,7 @@ export default function Home() {
         {/* Section 6: Knowledge */}
         <section className="py-16 bg-base-100" id="benefits">
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-center font-extrabold text-3xl md:text-5xl tracking-tight mb-12 md:mb-20">
+            <h2 className="text-4xl font-bold text-center mb-8">
               Benefits
             </h2>
 
@@ -508,7 +507,9 @@ export default function Home() {
 
         {/* Section 8: Join the IPO Club Today */}
         <section className="py-16 bg-neutral text-neutral-content">
-          <h2 className="text-3xl font-bold text-center mb-8">Ready to Take Your Company Public?</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">
+            Ready to Take Your Company Public?
+          </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center text-white">
             Join IPO Club and gain access to our extensive ecosystem, deep investor network, and industry-leading Merchant Bankers.
           </p>
