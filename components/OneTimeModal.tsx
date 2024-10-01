@@ -20,11 +20,11 @@ export default function OneTimeModal() {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-75">
-            <div className=" bg-gradient-to-r from-cyan-100 to-blue-50 text-black rounded-lg shadow-lg max-w-lg w-full p-6">
-                <h2 className="text-lg font-bold mb-4">
+            <div className="bg-gradient-to-r from-cyan-100 to-blue-50 text-black rounded-lg shadow-lg max-w-xs sm:max-w-md md:max-w-lg w-full p-3 sm:p-4">
+                <h2 className="text-base sm:text-lg font-bold mb-2">
                     DISCLAIMER
                 </h2>
-                <p className="text-sm text-gray-700">
+                <p className="text-xs sm:text-sm text-gray-700 leading-tight">
                     The general information provided on the website is taken from trusted sources and is subject to change without any notice and at the sole discretion of Atul Projects.
                     <br /><br />
                     Atul Projects under no circumstances guarantee or warranty that this website reflects the latest changes/amendments pertaining to the information at all times and at any time.
@@ -35,7 +35,7 @@ export default function OneTimeModal() {
                     <br /><br />
                     By proceeding to view our website, you acknowledge that you have read, understood as well as accepted these terms. Our terms may be revised time and again by Atul Projects.
                 </p>
-                <div className="flex justify-center mt-4">
+                <div className="flex justify-center mt-3">
                     <button
                         className="bg-slate-700 text-white px-4 py-2 rounded-lg hover:bg-slate-900"
                         onClick={handleClose}
