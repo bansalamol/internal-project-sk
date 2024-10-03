@@ -26,7 +26,7 @@ const MessageModal: React.FC<MessageModalProps> = ({ message, isError, onClose }
                         />
                     </div>
                 </div>
-                <h2 className="text-lg font-bold text-center mt-6 mb-4">Thank you for joining IPO CLUB!</h2>
+                <h2 className="text-lg font-bold text-center mt-6 mb-4">Thank you for joining IPO EXPERT!</h2>
                 <p className="text-md text-black mb-4">{message}</p>
                 <hr className="border-gray-500 sm:mx-auto dark:border-gray-400" />
                 <p className="text-sm px-8 text-gray-800 flex items-center mt-2">

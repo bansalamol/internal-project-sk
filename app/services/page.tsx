@@ -28,7 +28,7 @@ export default function Home() {
                         Home
                     </Link>
                 </div>
-                {/* About IPO Club */}
+                {/* About IPO EXPERT */}
                 <section className="py-16 bg-gradient-to-r from-cyan-100 to-blue-50 text-center">
                     <h2 className="text-3xl font-bold mb-4">Choose your role to learn more</h2>
                     <p className="text-gray-600 mb-8">Let us know who you are, and we&apos;ll provide personalized information.</p>

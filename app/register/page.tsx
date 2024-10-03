@@ -37,7 +37,7 @@ const Register = () => {
 
             if (response.ok) {
                 // Store modal message and state in session storage
-                sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO CLUB! Our professional will get in touch with you shortly to provide more details and answer any questions you may have.');
+                sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO EXPERT! Our professional will get in touch with you shortly to provide more details and answer any questions you may have.');
                 sessionStorage.setItem('isError', 'false');
                 form.reset();
 

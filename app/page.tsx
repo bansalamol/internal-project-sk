@@ -56,7 +56,7 @@ export default function Home() {
             <div className="mx-auto max-w-3xl text-center">
               <div className="mt-3">
                 <h1 className="text-white text-center gap-3 text-3xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
-                  <span className="relative text-white uppercase">IPO Club - Your Gateway to capital</span>
+                  <span className="relative text-white uppercase">IPO EXPERT - Your Gateway to capital</span>
                   <span className="relative">
                     <span className="mr-4 md:mr-5 text-3xl block my-3">The Complete Ecosystem for Companies Going</span>
                     <span className="relative inline-block">
@@ -82,14 +82,14 @@ export default function Home() {
         </section>
 
 
-        {/* Section 1: Why Choose IPO Club? */}
+        {/* Section 1: Why Choose IPO EXPERT? */}
         <section className="py-16 rounded-lg bg-gradient-to-r from-cyan-300 to-blue-200" id="services">
           <h2 className="text-4xl font-bold text-center mb-8">
             {/*Transform Your IPO Journey with Comprehensive Support*/}
             WHAT WE DO
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center mb-12">
-            IPO Club offers an end-to-end ecosystem tailored to help businesses seamlessly transition into the public market. From preparation to execution, our expert team ensures your IPO is strategic, successful, and efficient.
+            IPO EXPERT offers an end-to-end ecosystem tailored to help businesses seamlessly transition into the public market. From preparation to execution, our expert team ensures your IPO is strategic, successful, and efficient.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
@@ -280,7 +280,7 @@ export default function Home() {
               <div className="w-80 h-80 bg-gradient-to-r from-cyan-300 to-blue-400 rounded-full blur-2xl opacity-30 transform scale-110 translate-x-1/2 translate-y-1/3"></div>
             </div>
             <h2 className="text-4xl font-bold text-center mb-8">
-              IPO CLUB ECOSYSTEM
+              IPO EXPERT ECOSYSTEM
             </h2>
 
             {/* Image and Content Row */}
@@ -301,7 +301,7 @@ export default function Home() {
               <div className="md:w-1/2 text-left">
                 <h3 className="text-2xl font-bold text-blue-700 mb-6">Our Deep Rooted Ecosystem</h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  IPO Club Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
+                  IPO EXPERT Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
                 </p>
 
                 {/* Align the button with the content */}
@@ -533,13 +533,13 @@ export default function Home() {
           </div>
         </section> */}
 
-        {/* Section 8: Join the IPO Club Today */}
+        {/* Section 8: Join the IPO EXPERT Today */}
         <section className="py-16 bg-neutral text-neutral-content">
           <h2 className="text-4xl font-bold text-center mb-8">
             Ready to Take Your Company Public?
           </h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto text-center text-white">
-            Join IPO Club and gain access to our extensive ecosystem, deep investor network, and industry-leading Merchant Bankers.
+            Join IPO EXPERT and gain access to our extensive ecosystem, deep investor network, and industry-leading Merchant Bankers.
           </p>
           <div className="mt-6 flex justify-center space-x-4">
             <a href="/register">

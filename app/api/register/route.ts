@@ -99,26 +99,26 @@ async function sendWelcomeEmails(memberName: string, memberEmail: string, member
 
     // Email to new member
     const memberMessage = {
-        from: 'IPO Club Team <info@ipoclub.in>',
+        from: 'IPO EXPERT Team <info@ipoclub.in>',
         to: memberEmail,
-        subject: 'Welcome to the IPO Club!',
-        text: `Hi ${memberName},\n\nWelcome to the IPO Club! We’re excited to have you with us.\n\nBest,\nIPO Club Team`,
+        subject: 'Welcome to the IPO EXPERT!',
+        text: `Hi ${memberName},\n\nWelcome to the IPO EXPERT! We’re excited to have you with us.\n\nBest,\nIPO EXPERT Team`,
     };
 
-    // Email to IPO Club team
+    // Email to IPO EXPERT team
     const teamMessage = {
-        from: 'IPO Club Team <info@ipoclub.in>',
+        from: 'IPO EXPERT Team <info@ipoclub.in>',
         to: 'info@ipoclub.in',
         cc: 'sachin@ipoclub.in',
-        subject: 'New IPO Club Member Registration',
-        text: `Hi Team,\n\nI hope this message finds you well. Below are the registration details for our new member in the IPO Club:\n\n
+        subject: 'New IPO EXPERT Member Registration',
+        text: `Hi Team,\n\nI hope this message finds you well. Below are the registration details for our new member in the IPO EXPERT:\n\n
         Member Name: ${memberDetails.name}\n
         Email Address: ${memberDetails.email}\n
         Registration Date: ${new Date().toLocaleDateString()}\n
         Role: ${memberDetails.role}\n
         Company: ${memberDetails.company}\n
         Address: ${memberDetails.address}\n
-        \nPlease update our records accordingly and ensure they receive all necessary welcome materials.\n\nBest,\nIPO Club Team`,
+        \nPlease update our records accordingly and ensure they receive all necessary welcome materials.\n\nBest,\nIPO EXPERT Team`,
     };
 
     // Send both emails

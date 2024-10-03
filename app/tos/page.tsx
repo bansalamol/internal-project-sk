@@ -57,18 +57,18 @@ const TOS = () => {
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Terms and Conditions for IPO CLUB
+          {`Terms and Conditions for IPO EXPERT
 Last Updated: September 27, 2024
 
-Welcome to IPO CLUB!
+Welcome to IPO EXPERT!
 
-These Terms of Service ("Terms") govern your use of the IPO CLUB website at https://ipoclub.in ("Website") and the services provided by IPO CLUB. By accessing and using our Website and services, you agree to these Terms.
+These Terms of Service ("Terms") govern your use of the IPO EXPERT website at https://ipoclub.in ("Website") and the services provided by IPO EXPERT. By accessing and using our Website and services, you agree to these Terms.
 
-Description of IPO CLUB
-IPO CLUB is a platform that provides resources, tools, and expert guidance to help companies prepare for an Initial Public Offering (IPO) with greater efficiency and support.
+Description of IPO EXPERT
+IPO EXPERT is a platform that provides resources, tools, and expert guidance to help companies prepare for an Initial Public Offering (IPO) with greater efficiency and support.
 
 Ownership and Usage Rights
-When you subscribe to IPO CLUB’s services, you gain access to exclusive resources and materials. While you have the right to use these materials for preparing your IPO, they cannot be resold or redistributed without permission. Refunds, if applicable, are subject to our refund policy.
+When you subscribe to IPO EXPERT’s services, you gain access to exclusive resources and materials. While you have the right to use these materials for preparing your IPO, they cannot be resold or redistributed without permission. Refunds, if applicable, are subject to our refund policy.
 
 User Data and Privacy
 We collect and store user data, including names, email addresses, and payment information, as necessary to provide our services. For more information on how we handle your data, please review our Privacy Policy at https://ipoclub.in/privacy-policy.
@@ -77,14 +77,14 @@ Non-Personal Data Collection
 We use cookies to gather non-personal data for the purpose of improving user experience and optimizing our services.
 
 Governing Law
-These Terms are governed by the laws of the jurisdiction in which IPO CLUB operates.
+These Terms are governed by the laws of the jurisdiction in which IPO EXPERT operates.
 
 Updates to the Terms
-IPO CLUB reserves the right to modify these Terms at any time. Any updates will be communicated to users through email or on our Website.
+IPO EXPERT reserves the right to modify these Terms at any time. Any updates will be communicated to users through email or on our Website.
 
 For any questions or concerns about these Terms, please contact us at info@ipoclub.in.
 
-Thank you for choosing IPO CLUB!`}
+Thank you for choosing IPO EXPERT!`}
         </pre>
       </div>
     </main>

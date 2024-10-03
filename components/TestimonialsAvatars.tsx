@@ -67,7 +67,7 @@ const TestimonialsAvatars = ({ priority }: { priority?: boolean }) => {
 
         <div className="text-base text-white text-base-content/80">
           <span className="font-semibold text-base-content text-white">32</span> makers
-          IPO Club faster
+          IPO EXPERT faster
         </div>
       </div>
     </div>

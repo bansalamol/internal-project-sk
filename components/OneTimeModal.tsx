@@ -25,14 +25,14 @@ export default function OneTimeModal() {
                     DISCLAIMER
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-700 leading-tight">
-                    The information provided on this website is sourced from reliable channels and may change without prior notice at the sole discretion of IPO CLUB.
+                    The information provided on this website is sourced from reliable channels and may change without prior notice at the sole discretion of IPO EXPERT.
                     <br /><br />
-                    IPO CLUB does not guarantee or warrant that the information on this website will always reflect the most up-to-date changes, especially regarding market conditions, IPO schedules, or financial details.
+                    IPO EXPERT does not guarantee or warrant that the information on this website will always reflect the most up-to-date changes, especially regarding market conditions, IPO schedules, or financial details.
                     All data, reports, analysis, and services mentioned here are for informational purposes only and are subject to revision. No individual or entity is permitted to copy, modify, display, create derivative works, transmit, exploit, sell, or distribute the content of this website without permission. It is the responsibility of the viewer to verify the accuracy and completeness of the information provided.
                     <br /><br />
-                    IPO CLUB holds no control over the content or availability of external websites linked through our platform, and we shall not be liable for any information or content on these Linked websites.
+                    IPO EXPERT holds no control over the content or availability of external websites linked through our platform, and we shall not be liable for any information or content on these Linked websites.
                     <br /><br />
-                    By continuing to use our website, you confirm that you have read, understood, and agreed to these terms. IPO CLUB reserves the right to revise these terms periodically.
+                    By continuing to use our website, you confirm that you have read, understood, and agreed to these terms. IPO EXPERT reserves the right to revise these terms periodically.
                 </p>
                 <div className="flex justify-center mt-3">
                     <button

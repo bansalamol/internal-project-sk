@@ -13,18 +13,18 @@ interface FAQItemProps {
 
 const faqList: FAQItemProps[] = [
   {
-    question: "What is an IPO Club?",
+    question: "What is an IPO EXPERT?",
     answer: (
       <p>
-        An IPO Club is a community that provides investors with insights, resources, and exclusive opportunities related to upcoming Initial Public Offerings (IPOs). Members can stay informed and make better investment decisions.
+        An IPO EXPERT is a community that provides investors with insights, resources, and exclusive opportunities related to upcoming Initial Public Offerings (IPOs). Members can stay informed and make better investment decisions.
       </p>
     ),
   },
   {
-    question: "How does the IPO Club add value to investors?",
+    question: "How does the IPO EXPERT add value to investors?",
     answer: (
       <div>
-        The IPO Club adds value by providing:
+        The IPO EXPERT adds value by providing:
         <ul className="list-disc list-inside space-y-1.5 mt-2">
           <li>Exclusive IPO research and analysis: Get detailed guidance on companies planning to go public.</li>
           <li>Early access to IPO opportunities: Some IPO Clubs may have partnerships allowing members priority access to IPO allocations.</li>
@@ -35,34 +35,34 @@ const faqList: FAQItemProps[] = [
     ),
   },
   {
-    question: "Why should I join an IPO Club instead of investing on my own?",
+    question: "Why should I join an IPO EXPERT instead of investing on my own?",
     answer: (
       <p>
-        An IPO Club provides access to curated, timely information and in-depth company studies, reducing the research burden on individual investors. The club offers expert analysis, detailed reports on a company&apos;s financial health, growth potential, and market position, along with IPO alerts and insights that may not be easily available elsewhere. This comprehensive approach equips you with the knowledge to make more informed and confident investment decisions.
+        An IPO EXPERT provides access to curated, timely information and in-depth company studies, reducing the research burden on individual investors. The EXPERT offers expert analysis, detailed reports on a company&apos;s financial health, growth potential, and market position, along with IPO alerts and insights that may not be easily available elsewhere. This comprehensive approach equips you with the knowledge to make more informed and confident investment decisions.
       </p>
     ),
   },
   {
-    question: "Can the IPO Club guarantee profits from IPO investments?",
+    question: "Can the IPO EXPERT guarantee profits from IPO investments?",
     answer: (
       <p>
-        No, IPO Club cannot guarantee profits. The stock market, especially IPOs, can be volatile, and while the club provides valuable information and analysis, investing always involves risk. It&apos;s essential to perform your own due diligence.
+        No, IPO EXPERT cannot guarantee profits. The stock market, especially IPOs, can be volatile, and while the EXPERT provides valuable information and analysis, investing always involves risk. It&apos;s essential to perform your own due diligence.
       </p>
     ),
   },
   {
-    question: "What kind of IPOs does the club focus on?",
+    question: "What kind of IPOs does the EXPERT focus on?",
     answer: (
       <p>
-        The IPO Club covers a wide range of sectors and companies, from tech startups to established firms. Depending on the platform, you may receive information on domestic and international IPOs, as well as small-cap or large-cap companies.
+        The IPO EXPERT covers a wide range of sectors and companies, from tech startups to established firms. Depending on the platform, you may receive information on domestic and international IPOs, as well as small-cap or large-cap companies.
       </p>
     ),
   },
   {
-    question: "How do I benefit from the community in an IPO Club?",
+    question: "How do I benefit from the community in an IPO EXPERT?",
     answer: (
       <p>
-        Being part of an IPO Club allows you to share experiences, strategies, and insights with fellow investors. This collaborative environment fosters learning and can help you develop more refined approaches to IPO investments.
+        Being part of an IPO EXPERT allows you to share experiences, strategies, and insights with fellow investors. This collaborative environment fosters learning and can help you develop more refined approaches to IPO investments.
       </p>
     ),
   },

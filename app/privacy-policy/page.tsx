@@ -57,10 +57,10 @@ const PrivacyPolicy = () => {
           className="leading-relaxed whitespace-pre-wrap"
           style={{ fontFamily: "sans-serif" }}
         >
-          {`Privacy Policy for IPO CLUB
+          {`Privacy Policy for IPO EXPERT
 Last Updated: September 27, 2024
 
-Thank you for visiting IPO CLUB ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect your personal and non-personal information when you use our website located at https://ipoclub.in (the "Website").
+Thank you for visiting IPO EXPERT ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect your personal and non-personal information when you use our website located at https://ipoclub.in (the "Website").
 
 By accessing or using the Website, you agree to the terms of this Privacy Policy. If you do not agree with the practices described in this policy, please do not use the Website.
 
@@ -82,7 +82,7 @@ Data Sharing
 We do not share your personal data with any third parties except as required for order processing (e.g., sharing your information with payment processors). We do not sell, trade, or rent your personal information to others.
 
 Children's Privacy
-IPO CLUB is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at info@ipoclub.in.
+IPO EXPERT is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at info@ipoclub.in.
 
 Updates to the Privacy Policy
 We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be posted on this page, and we may notify you via email about significant changes.
@@ -94,7 +94,7 @@ Email: info@ipoclub.in
 
 For all other inquiries, please visit our Contact Us page on the Website.
 
-By using IPO CLUB, you consent to the terms of this Privacy Policy.
+By using IPO EXPERT, you consent to the terms of this Privacy Policy.
 `}
         </pre>
       </div>

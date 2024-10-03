@@ -3,7 +3,7 @@
 import React from "react";
 
 const ButtonGradient = ({
-  title = "Join IPO CLUB",
+  title = "Join IPO EXPERT",
   onClick = () => {},
 }: {
   title?: string;

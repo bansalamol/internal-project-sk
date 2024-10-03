@@ -27,11 +27,11 @@ export default function Home() {
                         Home
                     </Link>
                 </div>
-                {/* About IPO Club */}
+                {/* About IPO EXPERT */}
                 <section className="my-12 text-center bg-gradient-to-r from-blue-500 to-indigo-500 py-12 rounded-lg shadow-lg">
-                    <h1 className="text-3xl font-bold text-center mb-8 text-white">About IPO Club</h1>
+                    <h1 className="text-3xl font-bold text-center mb-8 text-white">About IPO EXPERT</h1>
                     <p className="text-lg text-gray-700 max-w-3xl mx-auto text-white">
-                        IPO Club is run by industry experts with years of experience in the field of initial public offerings (IPOs).
+                        IPO EXPERT is run by industry experts with years of experience in the field of initial public offerings (IPOs).
                         Our mission is to connect institutional investors, individual investors, and professionals like CAs, CSs, MBAs,
                         with the latest opportunities in the IPO market.
                     </p>
