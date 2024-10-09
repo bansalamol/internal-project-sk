@@ -44,7 +44,7 @@ const PrivacyPolicy = () => {
               Effective Date: 09 October, 2024
             </p>
             <p className="text-gray-600 mb-4">
-              www.ipoexpert.in (&quot;Website&quot;) is owned and operated by S K & Associates
+              www.ipoexpert.io (&quot;Website&quot;) is owned and operated by S K & Associates
               (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to protecting the
               privacy of any individual or entity (&quot;User&quot;) who accesses or uses the
               Website. This Privacy Policy describes how we collect, use, disclose,
@@ -147,7 +147,7 @@ const PrivacyPolicy = () => {
               12. Contact Information
             </h2>
             <p className="text-gray-600 mb-4">
-              If you have any questions or concerns, please contact us at: info@ipoexpert.in
+              If you have any questions or concerns, please contact us at: info@ipoexpert.io
             </p>
           </div>
         </div>

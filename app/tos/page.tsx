@@ -41,7 +41,7 @@ const TOS = () => {
               Terms and Conditions for {config.appName}
             </h1>
             <p className="text-gray-600 mb-4">
-              www.ipoexpert.in (&quot;Website&quot;) is owned and operated by S K & Associates
+              www.ipoexpert.io (&quot;Website&quot;) is owned and operated by S K & Associates
               (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to protecting the
               privacy of any individual or entity (&quot;User&quot;) who accesses or uses the
               Website. This Privacy Policy describes how we collect, use, disclose,
@@ -199,7 +199,7 @@ const TOS = () => {
               If you have any questions regarding these Terms of Service, please
               contact us at:
               <br />
-              <strong>Email:</strong> info@ipoexpert.in
+              <strong>Email:</strong> info@ipoexpert.io
             </p>
           </div>
         </div>

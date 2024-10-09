@@ -28,7 +28,7 @@ export default function OneTimeModal() {
                     Effective Date: 09 October, 2024
                 </p>
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    www.ipoexpert.in (&quot;Website&quot;) is owned and operated by S K & Associates
+                    www.ipoexpert.io (&quot;Website&quot;) is owned and operated by S K & Associates
                     (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to protecting the
                     privacy of any individual or entity (&quot;User&quot;) who accesses or uses the
                     Website. This Privacy Policy describes how we collect, use, disclose,
@@ -61,9 +61,9 @@ export default function OneTimeModal() {
                     <br /><br />
                     9. Contact Information
                     If you have any questions about this Disclaimer or the Website, please contact us at:
-                    Email: info@ipoexpert.in
+                    Email: info@ipoexpert.io
                     <br /><br />
-                    By accessing and using www.ipoexpert.in, you acknowledge that you have read, understood, and agree to the terms outlined in this Disclaimer.
+                    By accessing and using www.ipoexpert.io, you acknowledge that you have read, understood, and agree to the terms outlined in this Disclaimer.
                 </p>
                 <div className="flex justify-center mt-3">
                     <button
