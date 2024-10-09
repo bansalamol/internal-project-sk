@@ -99,7 +99,7 @@ async function sendWelcomeEmails(memberName: string, memberEmail: string, member
 
     // Email to new member
     const memberMessage = {
-        from: 'IPO EXPERT Team <info@ipoclub.in>',
+        from: 'IPO EXPERT Team <info@ipoexpert.io>',
         to: memberEmail,
         subject: 'Welcome to the IPO EXPERT!',
         text: `Hi ${memberName},\n\nWelcome to the IPO EXPERT! We’re excited to have you with us.\n\nBest,\nIPO EXPERT Team`,
@@ -107,9 +107,9 @@ async function sendWelcomeEmails(memberName: string, memberEmail: string, member
 
     // Email to IPO EXPERT team
     const teamMessage = {
-        from: 'IPO EXPERT Team <info@ipoclub.in>',
-        to: 'info@ipoclub.in',
-        cc: 'sachin@ipoclub.in',
+        from: 'IPO EXPERT Team <info@ipoexpert.io>',
+        to: 'info@ipoexpert.io',
+        cc: 'sachin@ipoexpert.io',
         subject: 'New IPO EXPERT Member Registration',
         text: `Hi Team,\n\nI hope this message finds you well. Below are the registration details for our new member in the IPO EXPERT:\n\n
         Member Name: ${memberDetails.name}\n
@@ -123,7 +123,7 @@ async function sendWelcomeEmails(memberName: string, memberEmail: string, member
 
     // Send both emails
     await Promise.all([
-        mg.messages.create('ipoclub.in', memberMessage),
-        mg.messages.create('ipoclub.in', teamMessage),
+        mg.messages.create('ipoexpert.io', memberMessage),
+        mg.messages.create('ipoexpert.io', teamMessage),
     ]);
 }

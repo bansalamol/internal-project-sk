@@ -13,12 +13,12 @@ const Footer = () => {
           <div className="mb-6 md:mb-0 text-center md:text-left">
             <Link href="/#" aria-current="page" className="flex gap-2 justify-center md:justify-start items-center">
               <Image
-                src="/assets/images/ipoclub.jpeg"
+                src="/assets/images/ipoclub.png"
                 alt={`${config.appName} logo`}
                 priority={true}
-                className="w-10 h-10"
-                width={48}
-                height={48}
+                className="w-16 h-12"
+                width={100}
+                height={100}
               />
               <p><strong className="font-extrabold tracking-tight text-base md:text-lg">{config.appDescription}</strong></p>
             </Link>
@@ -36,7 +36,7 @@ const Footer = () => {
             <div className="flex flex-col text-center md:text-left" id="contact" >
               <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-black">CONTACT INFO</h2>
               <div className="text-gray-800 dark:text-gray-800 font-medium">
-                <a href="mailto:info@ipoclub.in" className="link link-hover">Email: info@ipoclub.in</a>
+                <a href="mailto:info@ipoexpert.io" className="link link-hover">Email: info@ipoexpert.io</a>
               </div>
             </div>
           </div>
