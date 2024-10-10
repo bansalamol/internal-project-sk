@@ -45,12 +45,11 @@ export default function Home() {
 
       if (response.ok) {
         // Store modal message and state in session storage
-        sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO EXPERT! Our professional will get in touch with you shortly to provide more details and answer any questions you may have.');
-        sessionStorage.setItem('isError', 'false');
+        const successMessage = 'We appreciate your interest in IPO EXPERT! Our professional will get in touch with you shortly to provide more details and answer any questions you may have.';
+        setModalMessage(successMessage);
+        setIsError(false);
         form.reset();
-
-        // Set redirect state
-        setShouldRedirect(true);
+        setShowModal(true); // Show the modal instead of redirecting
       } else {
         const errorData = await response.json();
         toast.error(errorData.message);
@@ -59,6 +58,7 @@ export default function Home() {
       toast.error("An unexpected error occurred. Please try again.");
     }
   };
+
 
   useEffect(() => {
     if (shouldRedirect) {

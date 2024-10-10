@@ -20,9 +20,9 @@ const MessageModal: React.FC<MessageModalProps> = ({ message, isError, onClose }
                             src={logo}
                             alt={`${config.appName} logo`}
                             priority={true}
-                            width={48}
-                            height={48}
-                            className="w-12 h-12 object-contain"
+                            width={100}
+                            height={100}
+                            className="w-24 h-12 object-contain"
                         />
                     </div>
                 </div>
