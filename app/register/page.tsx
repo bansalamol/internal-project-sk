@@ -82,7 +82,6 @@ const Register = () => {
                         Home
                     </Link>
                 </div>
-
                 <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg p-8 mt-10">
                     <h2 className="text-3xl font-bold text-center mb-6">Join {config.appName}</h2>
 
@@ -150,7 +149,7 @@ const Register = () => {
                                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
                                 required
                             >
-                                <option value="">Select role</option>
+                                <option value="">Select Role</option>
                                 <option value="Company planning for an IPO">Company planning for an IPO</option>
                                {/*} <option value="Institutional Investor">Institutional Investor</option>
                                 <option value="CA/CS/MBA/Practising Professionals">CA/CS/MBA/Practising Professionals</option>
@@ -187,8 +186,6 @@ const Register = () => {
                         </button>
                     </form>
                 </div>
-
-
             </main>
             <Footer />
         </>

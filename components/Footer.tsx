@@ -2,8 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import config from "@/config";
 
-// Add the Footer to the bottom of your landing page and more.
-// The support link is connected to the config.js file. If there's no config.mailgun.supportEmail, the link won't be displayed.
 
 const Footer = () => {
   return (
@@ -13,14 +11,13 @@ const Footer = () => {
           <div className="mb-6 md:mb-0 text-center md:text-left">
             <Link href="/#" aria-current="page" className="flex gap-2 justify-center md:justify-start items-center">
               <Image
-                src="/assets/images/ipoclub.png"
+                src="/assets/images/logo-transparent.png"
                 alt={`${config.appName} logo`}
                 priority={true}
-                className="w-16 h-12"
-                width={100}
-                height={100}
+                className="w-64 h-18"
+                width={500}
+                height={500}
               />
-              <p><strong className="font-extrabold tracking-tight text-base md:text-lg">{config.appDescription}</strong></p>
             </Link>
           </div>
           

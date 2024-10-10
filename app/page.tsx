@@ -1,11 +1,14 @@
 "use client";
 
+import React from 'react';
 import { Suspense, useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-//import TestimonialsAvatars from "@/components/TestimonialsAvatars";
+import { toast } from "react-toastify";
 import ButtonGradient from "@/components/ButtonGradient";
 import Image from "next/image";
+import config from "@/config";
 import MessageModal from "@/components/MessageModal";
 import OneTimeModal from "@/components/OneTimeModal";
 //import IPOCLUBFAQ from "@/components/IPOCLUBFAQ";
@@ -16,6 +19,53 @@ export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [isError, setIsError] = useState(false);
+  const router = useRouter();
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
+    const mobile = formData.get("mobile") as string;
+    const email = formData.get("email") as string;
+    const role = formData.get("role") as string;
+    const company = formData.get("company") as string;
+    const address = formData.get("address") as string;
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, mobile, email, role, company, address }),
+      });
+
+      if (response.ok) {
+        // Store modal message and state in session storage
+        sessionStorage.setItem('modalMessage', 'We appreciate your interest in IPO EXPERT! Our professional will get in touch with you shortly to provide more details and answer any questions you may have.');
+        sessionStorage.setItem('isError', 'false');
+        form.reset();
+
+        // Set redirect state
+        setShouldRedirect(true);
+      } else {
+        const errorData = await response.json();
+        toast.error(errorData.message);
+      }
+    } catch (error) {
+      toast.error("An unexpected error occurred. Please try again.");
+    }
+  };
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      router.push('/');
+    }
+  }, [shouldRedirect, router]);
+
 
   const closeModal = () => {
     setShowModal(false);
@@ -44,122 +94,136 @@ export default function Home() {
       </Suspense>
       <main className="container-fluid mx-auto">
         {/* Banner Section */}
-        <section className="relative py-16 hero overflow-hidden min-h-screen bg-green-50/60">
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-8">
+        <section className="relative flex flex-col min-h-screen md:flex-row">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/assets/images/banner1.avif"
+              alt="Background"
+              className="object-cover w-full h-full"
+              fill
+            />
+            <div className="absolute inset-0 bg-neutral bg-opacity-70"></div>
+          </div>
 
-            {/* Left Section: Image with Text */}
-            <div className="relative flex-1">
-              <Image
-                src="/assets/images/ipo4.avif"
-                alt="Banner"
-                width={500}
-                height={600}
-                className="max-w-full h-auto rounded-md"
-              />
-              {/* Text Overlay on Image */}
-              <div className="absolute bottom-4 left-4 bg-blue-900 bg-opacity-75 p-4 text-white rounded-lg shadow-lg max-w-xs"> {/* Adjusted max-width */}
-                <h2 className="text-xl font-bold md:text-2xl"> {/* Responsive text size */}
-                  Lendingkart Hai Toh Business Is Good
-                </h2>
-                <p className="mt-1 text-sm md:text-lg"> {/* Responsive text size */}
-                  Check your eligibility for business financing and apply for unsecured small business loans...
-                </p>
-              </div>
-            </div>
-
-            {/* Right Section: Form */}
-            <div className="md:w-1/2 mt-8 md:mt-0 flex-1">
-              <div className="bg-white p-6 shadow-lg rounded-lg">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
-                  Check Eligibility
-                </h2>
-                <form>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="First Name"
-                      className="border border-gray-300 p-3 rounded"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      className="border border-gray-300 p-3 rounded"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <input
-                      type="email"
-                      placeholder="Email ID"
-                      className="w-full border border-gray-300 p-3 rounded"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <input
-                      type="text"
-                      placeholder="Mobile Number"
-                      className="w-full border border-gray-300 p-3 rounded"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <select
-                      className="w-full border border-gray-300 p-3 rounded"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        Do you have business registration proof?
-                      </option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                  </div>
-                  <div className="mt-4">
-                    <select
-                      className="w-full border border-gray-300 p-3 rounded"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        How old is your business?
-                      </option>
-                      <option value="1">1 year</option>
-                      <option value="2">2 years</option>
-                      {/* Add more options */}
-                    </select>
-                  </div>
-                  <div className="mt-4">
-                    <input
-                      type="text"
-                      placeholder="Monthly Sales"
-                      className="w-full border border-gray-300 p-3 rounded"
-                    />
-                  </div>
-                  <div className="mt-4">
-                    <label className="flex items-center space-x-2">
-                      <input type="checkbox" />
-                      <span className="text-sm text-gray-600">
-                        I hereby confirm that I have read the terms & conditions.
-                      </span>
-                    </label>
-                  </div>
-                  <div className="mt-6">
-                    <button
-                      type="submit"
-                      className="w-full bg-orange-500 text-white p-3 rounded hover:bg-orange-600 transition-colors duration-300"
-                    >
-                      Check Eligibility
-                    </button>
-                  </div>
-                </form>
-                <p className="mt-4 text-center text-sm text-gray-500">
-                  Already Applied?{" "}
-                  <a href="#" className="text-orange-500">
-                    Sign in
-                  </a>
-                </p>
+          {/* Left Side: Text Content */}
+          <div className="relative z-10 w-full md:w-1/2 flex flex-col justify-center items-center px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4 h-full">
+            <div className="mx-auto max-w-3xl text-center mt-20 lg:mt-52">
+              <div className="mt-3">
+                <h1 className="text-white text-3xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
+                  <span className="relative text-white uppercase">IPO EXPERT - Your Gateway to Capital</span>
+                  <span className="relative">
+                    <span className="mr-4 md:mr-5 text-3xl block my-3">The Complete Ecosystem for Companies Going</span>
+                    <span className="relative inline-block">
+                      <span className="absolute inset-0 bg-accent rounded-md"></span>
+                      <span className="relative z-10 px-4 py-2">Public</span>
+                    </span>
+                  </span>
+                </h1>
               </div>
             </div>
           </div>
-        </section>
 
+
+          {/* Right Side: Form Section */}
+          <div className="relative z-10 w-full md:w-1/2 flex items-center justify-center px-2">
+            <div className="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 mb-4"> {/* Changed max-w-md to max-w-lg */}
+              <h2 className="text-3xl font-bold text-center mb-6">Join {config.appName}</h2>
+              <p className="text-xl text-center">
+                From Strategy to Success, Your One-Stop Destination for IPOs
+              </p>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="mobile" className="block mb-2 text-sm font-medium text-gray-900">Mobile</label>
+                  <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                    placeholder="1234567890"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                    placeholder="name@domain.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block mb-2 text-sm font-medium text-gray-900">Company Name</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                    placeholder="Company Name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900">Address</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                    placeholder="Enter your address"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900">Register as</label>
+                  <select
+                    id="role"
+                    name="role"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-3"
+                    required
+                  >
+                    <option value="">Select Role</option>
+                    <option value="Company planning for an IPO">Company planning for an IPO</option>
+                  </select>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg h-5 w-5 p-1"
+                    checked
+                  />
+                  <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-900">
+                    I accept the <a href="/tos" className="text-blue-500 hover:underline">terms and conditions</a>
+                  </label>
+                </div>
+                <div className="mt-6 flex justify-center space-x-4">
+                  <button
+                    type="submit"
+                    className="btn btn-gradient animate-shimmer"
+                  >
+                    Join {config.appName}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
 
 
         {/* Section 1: Why Choose IPO EXPERT? */}
@@ -376,7 +440,7 @@ export default function Home() {
                   alt="Ecosystem"
                   width={800}
                   height={800}
-                  className="max-w-full h-auto rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
+                  className="max-w-full h-auto transition-transform transform hover:scale-105 duration-300"
                 />
               </div>
 

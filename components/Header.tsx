@@ -49,8 +49,8 @@ const Header = () => {
               alt={`${config.appName} logo`}
               className="w-56 h-16"
               priority={true}
-              width={0}
-              height={0}
+              width={500}
+              height={500}
             />
             {/* <span className="font-extrabold text-lg">{config.appName}</span> */}
           </Link>
