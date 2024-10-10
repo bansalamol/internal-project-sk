@@ -44,42 +44,122 @@ export default function Home() {
       </Suspense>
       <main className="container-fluid mx-auto">
         {/* Banner Section */}
-        <section className="relative hero overflow-hidden min-h-screen">
-          <Image
-            src="/assets/images/banner1.avif"
-            alt="Background"
-            className="object-cover w-full"
-            fill
-          />
-          <div className="relative hero-overlay bg-neutral bg-opacity-70"></div>
-          <div className="relative z-10 mx-auto max-w-[85rem] px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pt-4">
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="mt-3">
-                <h1 className="text-white text-center gap-3 text-3xl font-extrabold tracking-tight md:-mb-4 lg:text-6xl">
-                  <span className="relative text-white uppercase">IPO EXPERT - Your Gateway to capital</span>
-                  <span className="relative">
-                    <span className="mr-4 md:mr-5 text-3xl block my-3">The Complete Ecosystem for Companies Going</span>
-                    <span className="relative inline-block">
-                      <span className="absolute inset-0 bg-accent rounded-md"></span>
-                      <span className="relative z-10 px-4 py-2">Public</span>
-                    </span>
-                  </span>
-                </h1>
+        <section className="relative py-16 hero overflow-hidden min-h-screen bg-green-50/60">
+          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 md:px-8">
 
-              </div>
-              <div className="mt-12 max-w-3xl">
-                <p className="text-xl text-white">
-                  From Strategy to Success, Your One-Stop Destination for an IPOs
+            {/* Left Section: Image with Text */}
+            <div className="relative flex-1">
+              <Image
+                src="/assets/images/ipo4.avif"
+                alt="Banner"
+                width={500}
+                height={600}
+                className="max-w-full h-auto rounded-md"
+              />
+              {/* Text Overlay on Image */}
+              <div className="absolute bottom-4 left-4 bg-blue-900 bg-opacity-75 p-4 text-white rounded-lg shadow-lg max-w-xs"> {/* Adjusted max-width */}
+                <h2 className="text-xl font-bold md:text-2xl"> {/* Responsive text size */}
+                  Lendingkart Hai Toh Business Is Good
+                </h2>
+                <p className="mt-1 text-sm md:text-lg"> {/* Responsive text size */}
+                  Check your eligibility for business financing and apply for unsecured small business loans...
                 </p>
               </div>
-              <div className="mt-6 flex justify-center space-x-4">
-                <a href="/register">
-                  <ButtonGradient />
-                </a>
+            </div>
+
+            {/* Right Section: Form */}
+            <div className="md:w-1/2 mt-8 md:mt-0 flex-1">
+              <div className="bg-white p-6 shadow-lg rounded-lg">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  Check Eligibility
+                </h2>
+                <form>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      placeholder="First Name"
+                      className="border border-gray-300 p-3 rounded"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Last Name"
+                      className="border border-gray-300 p-3 rounded"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <input
+                      type="email"
+                      placeholder="Email ID"
+                      className="w-full border border-gray-300 p-3 rounded"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <input
+                      type="text"
+                      placeholder="Mobile Number"
+                      className="w-full border border-gray-300 p-3 rounded"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <select
+                      className="w-full border border-gray-300 p-3 rounded"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Do you have business registration proof?
+                      </option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                  <div className="mt-4">
+                    <select
+                      className="w-full border border-gray-300 p-3 rounded"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        How old is your business?
+                      </option>
+                      <option value="1">1 year</option>
+                      <option value="2">2 years</option>
+                      {/* Add more options */}
+                    </select>
+                  </div>
+                  <div className="mt-4">
+                    <input
+                      type="text"
+                      placeholder="Monthly Sales"
+                      className="w-full border border-gray-300 p-3 rounded"
+                    />
+                  </div>
+                  <div className="mt-4">
+                    <label className="flex items-center space-x-2">
+                      <input type="checkbox" />
+                      <span className="text-sm text-gray-600">
+                        I hereby confirm that I have read the terms & conditions.
+                      </span>
+                    </label>
+                  </div>
+                  <div className="mt-6">
+                    <button
+                      type="submit"
+                      className="w-full bg-orange-500 text-white p-3 rounded hover:bg-orange-600 transition-colors duration-300"
+                    >
+                      Check Eligibility
+                    </button>
+                  </div>
+                </form>
+                <p className="mt-4 text-center text-sm text-gray-500">
+                  Already Applied?{" "}
+                  <a href="#" className="text-orange-500">
+                    Sign in
+                  </a>
+                </p>
               </div>
             </div>
           </div>
         </section>
+
 
 
         {/* Section 1: Why Choose IPO EXPERT? */}
@@ -282,12 +362,15 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center mb-8">
               IPO EXPERT ECOSYSTEM
             </h2>
+            <p className="text-lg text-gray-600 mb-4">
+              IPO EXPERT Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
+            </p>
 
             {/* Image and Content Row */}
             <div className="relative flex flex-col md:flex-row justify-between items-center gap-8 md:gap-12 z-10">
 
               {/* Image on the Left */}
-              <div className="md:w-1/2 flex justify-center md:justify-start">
+              <div className="w-full flex justify-center">
                 <Image
                   src="/assets/images/ecosystem6.png"
                   alt="Ecosystem"
@@ -295,21 +378,6 @@ export default function Home() {
                   height={800}
                   className="max-w-full h-auto rounded-full shadow-lg transition-transform transform hover:scale-105 duration-300"
                 />
-              </div>
-
-              {/* Content on the Right */}
-              <div className="md:w-1/2 text-left">
-                <h3 className="text-2xl font-bold text-blue-700 mb-6">Our Deep Rooted Ecosystem</h3>
-                <p className="text-lg text-gray-600 mb-4">
-                  IPO EXPERT Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
-                </p>
-
-                {/* Align the button with the content */}
-                {/* <div className="mt-4">
-                  <a href="/ecosystem" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500 transition-colors duration-300">
-                    Learn More
-                  </a>
-                </div> */}
               </div>
 
             </div>

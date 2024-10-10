@@ -53,7 +53,7 @@ const TOS = () => {
               1. Acceptance of Terms
             </h2>
             <p className="text-gray-600 mb-4">
-              By using this Website, you affirm that you have read, understood,
+              By using this Website, you affirm that you <br /> Have read, understood,
               and agree to comply with these Terms of Service, including any
               policies referenced herein (such as our Privacy Policy and
               Disclaimer).
@@ -123,7 +123,17 @@ const TOS = () => {
             </p>
 
             <h2 className="text-xl font-semibold mb-2 text-gray-700">
-              6. No Advance Payments
+              6. Third-Party Content and Links
+            </h2>
+            <p className="text-gray-600 mb-4">
+              The Website may contain links to external websites or third-party
+              content. The Company does not endorse or assume any responsibility
+              for the content, privacy policies, or practices of third-party
+              websites. You access such third-party websites at your own risk.
+            </p>
+
+            <h2 className="text-xl font-semibold mb-2 text-gray-700">
+              7. No Advance Payments
             </h2>
             <p className="text-gray-600 mb-4">
               We do not ask for any advance payments nor charge any fees for
@@ -134,16 +144,7 @@ const TOS = () => {
               losses or damages incurred due to fraudulent third-party activities.
             </p>
 
-            <h2 className="text-xl font-semibold mb-2 text-gray-700">
-              7. Third-Party Content and Links
-            </h2>
-            <p className="text-gray-600 mb-4">
-              The Website may contain links to external websites or third-party
-              content. The Company does not endorse or assume any responsibility
-              for the content, privacy policies, or practices of third-party
-              websites. You access such third-party websites at your own risk.
-            </p>
-
+           
             <h2 className="text-xl font-semibold mb-2 text-gray-700">
               8. Limitation of Liability
             </h2>

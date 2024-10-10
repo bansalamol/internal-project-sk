@@ -47,12 +47,12 @@ const Header = () => {
             <Image
               src={logo}
               alt={`${config.appName} logo`}
-              className="w-16 h-12"
+              className="w-56 h-16"
               priority={true}
-              width={100}
-              height={100}
+              width={0}
+              height={0}
             />
-            <span className="font-extrabold text-lg">{config.appName}</span>
+            {/* <span className="font-extrabold text-lg">{config.appName}</span> */}
           </Link>
         </div>
 
