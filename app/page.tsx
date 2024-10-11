@@ -426,7 +426,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-center mb-8">
               IPO EXPERT ECOSYSTEM
             </h2>
-            <p className="text-lg text-gray-600 mb-4">
+            <p className="text-center text-lg text-gray-600 mb-4">
               IPO EXPERT Ecosystem navigates seamlessly with all participants, including Merchant Bankers, Industry Experts, Lenders, Legal Counsels, Auditors, PR agencies, RTAs, and Investors, ensuring a seamless and successful IPO journey.
             </p>
 

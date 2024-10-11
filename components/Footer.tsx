@@ -14,18 +14,17 @@ const Footer = () => {
                 src="/assets/images/logo-transparent.png"
                 alt={`${config.appName} logo`}
                 priority={true}
-                className="w-64 h-18"
-                width={500}
-                height={500}
+                className="w-3/4 sm:w-1/2 h-auto"
+                width={640}
+                height={234}
               />
             </Link>
           </div>
-          
-
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-6 md:mt-0">
-            <div>
+            <div className="flex flex-col text-center md:text-left" >
               <h2 className="mb-6 text-sm font-bold text-gray-900 uppercase dark:text-black">Legal</h2>
               <ul className="text-gray-800 dark:text-gray-800 font-medium">
+                <li><Link href="/disclaimer" className="link link-hover">Disclaimer</Link></li>
                 <li><Link href="/tos" className="link link-hover">Terms of Service</Link></li>
                 <li><Link href="/privacy-policy" className="link link-hover">Privacy Policy</Link></li>
               </ul>
@@ -39,10 +38,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-500 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-black text-sm text-base-content/60 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-center items-center">
+          <p className="text-black text-sm text-base-content/60 mb-4 md:mb-0 text-center">
             Copyright © {new Date().getFullYear()} IPO EXPERT. All rights reserved
           </p>
           <div className="flex gap-4">

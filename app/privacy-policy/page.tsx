@@ -41,10 +41,10 @@ const PrivacyPolicy = () => {
               Privacy Policy for {config.appName}
             </h1>
             <p className="text-gray-600 mb-4">
-              Effective Date: 09 October, 2024
+              Effective Date: 12 October, 2024
             </p>
             <p className="text-gray-600 mb-4">
-            <span className="underline">www.ipoexpert.in</span> (&quot;Website&quot;) is owned and operated by S K & Associates
+            <span className="underline">www.ipoexpert.io</span> (&quot;Website&quot;) is owned and operated by S K & Associates
               (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to protecting the
               privacy of any individual or entity (&quot;User&quot;) who accesses or uses the
               Website. This Privacy Policy describes how we collect, use, disclose,
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
 
             <h4 className="font-bold">(c) Newsletters & Updates</h4>
             <p className="text-gray-600 mb-4">
-              By providing your email address, you may receive periodic emails from us regarding industry updates, financial related insights. You can unsubscribe from these emails at any time by following the instructions provided in the email or contacting us at info@ipoexpert.in
+              By providing your email address, you may receive periodic emails from us regarding industry updates, financial related insights. You can unsubscribe from these emails at any time by following the instructions provided in the email or contacting us at info@ipoexpert.io
             </p>
 
             <h2 className="text-xl font-semibold mb-2 text-gray-700">
@@ -198,10 +198,10 @@ const PrivacyPolicy = () => {
               If you have any questions, concerns, or requests regarding this Privacy Policy, please contact us at:
             </p>
             <ul className="list-disc list-inside text-gray-600 mb-4">
-              <li><strong>Email:</strong>info@ipoexpert.in</li>
+              <li><strong>Email:</strong>info@ipoexpert.io</li>
             </ul>
             <p className="text-gray-600 mb-4">
-              By using <span className="underline">www.ipoexpert.in</span>, you consent to the terms of this Privacy Policy
+              By using <span className="underline">www.ipoexpert.io</span>, you consent to the terms of this Privacy Policy
             </p>
 
           </div>

@@ -41,16 +41,16 @@ const Header = () => {
 
   return (
     <header className="py-2">
-      <nav className="container flex items-center justify-between px-8 py-2 mx-auto" aria-label="Global">
+      <nav className="container flex items-center z-50 sticky top-0 justify-between px-8 py-0 mx-auto" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
             <Image
               src={logo}
               alt={`${config.appName} logo`}
-              className="w-56 h-16"
+              className="w-1/4 sm:w-1/2 h-auto"
               priority={true}
-              width={500}
-              height={500}
+              width={640}
+              height={234}
             />
             {/* <span className="font-extrabold text-lg">{config.appName}</span> */}
           </Link>
@@ -100,13 +100,13 @@ const Header = () => {
               <Image
                 src={logo}
                 alt={`${config.appName} logo`}
-                className="w-8"
+                className="w-18 h-auto"
                 placeholder="blur"
                 priority={true}
-                width={32}
-                height={32}
+                width={240}
+                height={90}
               />
-              <span className="font-extrabold text-lg">{config.appName}</span>
+              {/*<span className="font-extrabold text-lg">{config.appName}</span>*/}
             </Link>
             <button
               type="button"
