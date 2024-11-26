@@ -12,7 +12,7 @@ export async function sendWelcomeEmails(memberName, memberEmail, memberDetails) 
 
     // HTML email template for the new member
     const memberMessage = {
-        from: '"IPO EXPERT Team" <ashutosh.gupta@maestriainfotech.com>',
+        from: '"IPO EXPERT Team" <info@ipoexpert.io>',
         to: memberEmail,
         subject: 'Welcome to the IPO EXPERT!',
         html: `
@@ -36,9 +36,9 @@ export async function sendWelcomeEmails(memberName, memberEmail, memberDetails) 
 
     // HTML email template for the admin team
     const teamMessage = {
-        from: '"IPO EXPERT Team" <ashutosh.gupta@maestriainfotech.com>',
-        to: 'ashutosh.gupta@maestriainfotech.com',
-        cc: 'ashutosh.gupta@maestriainfotech.com',
+        from: '"IPO EXPERT Team" <info@ipoexpert.io>',
+        to: 'info@ipoexpert.io',
+        cc: 'sachin@ipoexpert.io',
         subject: 'New IPO EXPERT Member Registration',
         html: `
             <html>
