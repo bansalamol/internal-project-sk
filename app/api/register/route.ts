@@ -73,7 +73,7 @@ export async function POST(request: Request) {
         }
 
         try {
-            await sendWelcomeEmails(name, email, { name, email, role, company, address });
+            await sendWelcomeEmails(name, email, { name, email, role, company, address, mobile });
         } catch (emailError) {
             console.error("Error sending emails:", emailError);
             return new Response(JSON.stringify({ message: "Registration successful. Email not sent." }), {
