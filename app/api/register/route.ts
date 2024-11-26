@@ -1,6 +1,6 @@
 import { createClient } from "@/libs/supabase/client";
-// import Mailgun from 'mailgun.js';
-const formData = require('form-data');
+import { sendWelcomeEmails } from "@/mailer";
+// const formData = require('form-data');
 
 export async function POST(request: Request) {
     const supabase = createClient();
@@ -72,8 +72,15 @@ export async function POST(request: Request) {
             });
         }
 
-        // Uncomment the line below to send welcome emails after successful insertion
-        // await sendWelcomeEmails(name, email, { name, email, role, company, address });
+        try {
+            await sendWelcomeEmails(name, email, { name, email, role, company, address });
+        } catch (emailError) {
+            console.error("Error sending emails:", emailError);
+            return new Response(JSON.stringify({ message: "Registration successful. Email not sent." }), {
+                status: 500,
+            });
+        }
+
 
         // Return success response
         return new Response(JSON.stringify({ message: "Registration successful!" }), {
@@ -81,48 +88,9 @@ export async function POST(request: Request) {
         });
 
     } catch (error) {
-        console.log('General Error:', error); // Log the general error
-        return new Response(JSON.stringify({ message: "Registration successful. Email not sent." }), {
+        console.log('General Error:', error);
+        return new Response(JSON.stringify({ message: "An unexpected error occurred." }), {
             status: 500,
         });
     }
 }
-
-// Uncomment this function when you're ready to send emails
-// async function sendWelcomeEmails(memberName: string, memberEmail: string, memberDetails: any) {
-//     const mailgun = new Mailgun(formData);
-//     const mg = mailgun.client({
-//         username: 'api',
-//         key: process.env.MAILGUN_API_KEY || '1b5736a5-771eb74d',
-//     });
-
-//     // Email to new member
-//     const memberMessage = {
-//         from: 'IPO EXPERT Team <info@ipoexpert.io>',
-//         to: memberEmail,
-//         subject: 'Welcome to the IPO EXPERT!',
-//         text: `Hi ${memberName},\n\nWelcome to the IPO EXPERT! We’re excited to have you with us.\n\nBest,\nIPO EXPERT Team`,
-//     };
-
-//     // Email to IPO EXPERT team
-//     const teamMessage = {
-//         from: 'IPO EXPERT Team <info@ipoexpert.io>',
-//         to: 'info@ipoexpert.io',
-//         cc: 'sachin@ipoexpert.io',
-//         subject: 'New IPO EXPERT Member Registration',
-//         text: `Hi Team,\n\nI hope this message finds you well. Below are the registration details for our new member in the IPO EXPERT:\n\n
-//         Member Name: ${memberDetails.name}\n
-//         Email Address: ${memberDetails.email}\n
-//         Registration Date: ${new Date().toLocaleDateString()}\n
-//         Role: ${memberDetails.role}\n
-//         Company: ${memberDetails.company}\n
-//         Address: ${memberDetails.address}\n
-//         \nPlease update our records accordingly and ensure they receive all necessary welcome materials.\n\nBest,\nIPO EXPERT Team`,
-//     };
-
-//     // Send both emails
-//     await Promise.all([
-//         mg.messages.create('ipoexpert.io', memberMessage),
-//         mg.messages.create('ipoexpert.io', teamMessage),
-//     ]);
-// }

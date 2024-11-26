@@ -20,7 +20,7 @@ export default function Home() {
   const [modalMessage, setModalMessage] = useState('');
   const [isError, setIsError] = useState(false);
   const router = useRouter();
-  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const [shouldRedirect] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
