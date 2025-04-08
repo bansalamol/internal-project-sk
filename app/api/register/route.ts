@@ -7,6 +7,7 @@ export async function POST(request: Request) {
     const { name, mobile, email, role, company, address } = await request.json();
 
     try {
+        /*
         // Check for duplicate mobile number
         const { data: mobileCheckData, error: mobileCheckError } = await supabase
             .from("leads")
@@ -70,7 +71,7 @@ export async function POST(request: Request) {
             return new Response(JSON.stringify({ message: "Registration failed. Please try again." }), {
                 status: 400,
             });
-        }
+        }*/
 
         try {
             await sendWelcomeEmails(name, email, { name, email, role, company, address, mobile });
