@@ -11,36 +11,45 @@ import React from 'react';
 import ButtonGradient from "@/components/ButtonGradient";
 
 const links: { href: string; label: string }[] = [
-  { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
+  { href: "#about", label: "How We Work" },
+  { href: "#ecosystem", label: "Ecosystem" },
   { href: "#benefits", label: "Benefits" },
+  { href: "#register", label: "Register" },
   { href: "#contact", label: "Contact" },
 ];
 
 const Header = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Close the modal when the route changes
   useEffect(() => {
     setIsOpen(false);
   }, [searchParams]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-
-
-
-  // CTA component to open the modal
   const cta: JSX.Element = (
-    <div className="flex space-x-4">
-      {<Link href="/register">
-        <ButtonGradient />
-      </Link>}
-    </div>
+    <Link href="#register">
+      <ButtonGradient title="Get Started" />
+    </Link>
   );
 
   return (
-    <header className="py-2">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "glass-effect shadow-lg py-1"
+          : "bg-transparent py-2"
+      }`}
+    >
       <nav className="container flex items-center justify-between px-8 py-2 mx-auto" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
@@ -48,12 +57,13 @@ const Header = () => {
               src={logo}
               alt={`${config.appName} logo`}
               placeholder="blur"
-              className="w-48 h-auto sm:w-40 md:w-48 lg:w-64 xl:w-72"
+              className={`w-36 h-auto sm:w-36 md:w-44 lg:w-52 transition-all duration-300 ${
+                scrolled ? "" : "brightness-0 invert"
+              }`}
               priority={true}
               width={640}
               height={640}
             />
-            {/* <span className="font-extrabold text-lg">{config.appName}</span> */}
           </Link>
         </div>
 
@@ -70,19 +80,21 @@ const Header = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 text-base-content"
+              className={`w-6 h-6 ${scrolled ? "text-base-content" : "text-white"}`}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
+        <div className="hidden lg:flex lg:justify-center lg:gap-8 lg:items-center">
           {links.map((link) => (
             <Link
               href={link.href}
               key={link.href}
-              className="link link-hover"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-blue-600 ${
+                scrolled ? "text-gray-700" : "text-white"
+              }`}
               title={link.label}
             >
               {link.label}
@@ -93,20 +105,23 @@ const Header = () => {
         <div className="hidden lg:flex lg:justify-end lg:flex-1">{cta}</div>
       </nav>
 
-      {/* Mobile menu, show/hide based on menu state */}
+      {/* Mobile menu */}
       <div className={`relative z-50 ${isOpen ? "" : "hidden"}`}>
-        <div className={`fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10`}>
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
+        <div className="fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-neutral/10 shadow-2xl">
           <div className="flex items-center justify-between">
             <Link className="flex items-center gap-2 shrink-0" href="/" title={`${config.appName} homepage`}>
               <Image
                 src={logo}
                 alt={`${config.appName} logo`}
-                className="w-48"
+                className="w-36"
                 priority={true}
                 width={640}
                 height={640}
               />
-              {/* <span className="font-extrabold text-lg">{config.appName}</span> */}
             </Link>
             <button
               type="button"
@@ -134,8 +149,9 @@ const Header = () => {
                   <Link
                     href={link.href}
                     key={link.href}
-                    className="link link-hover"
+                    className="text-gray-700 font-medium hover:text-blue-600 transition-colors"
                     title={link.label}
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </Link>

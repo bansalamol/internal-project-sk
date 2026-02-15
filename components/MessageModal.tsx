@@ -11,37 +11,52 @@ interface MessageModalProps {
 
 const MessageModal: React.FC<MessageModalProps> = ({ message, isError, onClose }) => {
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md">
-            <div className={`bg-white rounded-lg shadow-lg p-6 max-w-md w-full ${isError ? 'border border-red-500' : 'border border-green-500'}`}>
-                <div className="flex flex-col items-center mb-4">
-                    {/* Logo Container */}
-                    <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center border-4 border-white -mt-12 mb-4 z-10">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/60 backdrop-blur-sm">
+            <div className={`bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 ${isError ? 'border-2 border-red-400' : 'border-2 border-green-400'}`}>
+                <div className="flex flex-col items-center mb-6">
+                    <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center border-4 border-white shadow-md -mt-14 mb-4">
                         <Image
                             src={logo}
                             alt={`${config.appName} logo`}
                             priority={true}
                             width={100}
                             height={100}
-                            className="w-24 h-12 object-contain"
+                            className="w-16 h-10 object-contain"
                         />
                     </div>
                 </div>
-                <h2 className="text-lg font-bold text-center mt-6 mb-4">Thank you for joining IPO EXPERT!</h2>
-                <p className="text-md text-black mb-4">{message}</p>
-                <hr className="border-gray-500 sm:mx-auto dark:border-gray-400" />
-                <p className="text-sm px-8 text-gray-800 flex items-center mt-2">
-                    <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm9.408-5.5a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2h-.01ZM10 10a1 1 0 1 0 0 2h1v3h-1a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-1v-4a1 1 0 0 0-1-1h-2Z" clip-rule="evenodd" />
-                    </svg>
-                    &nbsp; You successfully submitted your responses.
-                </p>
 
-                <button
-                    onClick={onClose}
-                    className="mt-4 btn bg-slate-900 text-white hover:bg-slate-700 float-right"
-                >
-                    Close
-                </button>
+                <div className={`w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center ${isError ? 'bg-red-100' : 'bg-green-100'}`}>
+                    {isError ? (
+                        <svg className="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    ) : (
+                        <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                    )}
+                </div>
+
+                <h2 className="text-xl font-bold text-center text-gray-900 mb-3">
+                    {isError ? 'Something went wrong' : 'Thank you for joining IPO EXPERT!'}
+                </h2>
+                <p className="text-gray-600 text-center mb-6">{message}</p>
+
+                <div className="border-t border-gray-100 pt-4">
+                    <p className="text-sm text-gray-400 flex items-center justify-center gap-2 mb-4">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Your response has been submitted successfully.
+                    </p>
+                    <button
+                        onClick={onClose}
+                        className="w-full py-2.5 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-700 transition-colors"
+                    >
+                        Close
+                    </button>
+                </div>
             </div>
         </div>
     );
